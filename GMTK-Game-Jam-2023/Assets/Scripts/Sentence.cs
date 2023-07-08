@@ -16,7 +16,7 @@ public class Sentence : MonoBehaviour
     public Image responseImage;
     public BarsRemainingUI barsRemainingUI;
 
-    private void Awake()
+    private void Start()
     {
         text = GameManager.Instance.sentenceDict.GetStringFromID(id);
         censorableText = GetComponentInChildren<HighlightableText>();
