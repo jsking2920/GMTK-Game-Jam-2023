@@ -14,6 +14,6 @@ public class SentenceDict : ScriptableObject
 
     public Response GetResponse(string sentence, string finalText)
     {
-        return sentenceDict[sentence].responseList[finalText];
+        return sentenceDict[sentence].StringToResponse(finalText);
     }
 }
