@@ -3,9 +3,6 @@ using UnityEngine.EventSystems;
 using TMPro;
 using Unity.VisualScripting;
 using System.Collections.Generic;
-using System;
-using UnityEngine.Rendering;
-using System.Linq;
 
 public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
