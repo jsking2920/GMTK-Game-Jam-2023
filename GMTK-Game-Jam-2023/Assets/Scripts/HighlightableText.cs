@@ -23,6 +23,7 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
 
     public int maxBars = 2;
     private int curBars = 0;
+    public BarsRemainingUI barsRemaingUI;
 
     [Header("Simple or complex word delineation")]
     public bool simpleDelineation = false;
@@ -54,6 +55,8 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
                 wordLengths[i] = allWordsUntagged[i].Length;
             }
         }
+
+        SetCurBars(0);
     }
 
     public void OnPointerClick(PointerEventData pointerEventData)
@@ -211,7 +214,7 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
         SortRanges();
         SetText();
 
-        curBars += 1;
+        SetCurBars(curBars + 1);
 
         return highlightedRanges.IndexOf(r);
     }
@@ -221,7 +224,7 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
         highlightedRanges.RemoveAt(index);
         SetText();
 
-        curBars -= 1;
+        SetCurBars(curBars - 1);
     }
 
     private void SortRanges()
@@ -248,5 +251,15 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
             }
         }
         text.text = string.Join(joiner, allWordsTagged);
+    }
+
+    private void SetCurBars(int bars)
+    {
+        curBars = bars;
+
+        if (barsRemaingUI != null)
+        {
+            barsRemaingUI.UpdateUI(maxBars - bars);
+        }
     }
 }
