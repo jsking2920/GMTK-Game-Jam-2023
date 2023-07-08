@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using System.Collections.Generic;
 using System.Linq;
 
-public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler
+public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private Camera mainCam;
     private TextMeshProUGUI text;
@@ -29,6 +29,8 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
     public char seperator = '^'; // '^' for complex; ' ' for simple
     public string joiner = ""; // "" for complex; " " for simple
     private int[] wordLengths;
+
+    private bool dragging = false;
 
     private void Start()
     {
@@ -56,6 +58,8 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
+        if (dragging) return;
+        
         int index = GetWordIndex(pointerEventData.position, mainCam);
 
         if (index != -1)
@@ -79,12 +83,47 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
     
     public void OnBeginDrag(PointerEventData pointerEventData)
     {
-        
+        dragging = true;
+
+        int index = GetWordIndex(pointerEventData.position, mainCam);
+
+        if (index != -1)
+        {
+            int highlightRange = GetHighlightRangeForWord(index);
+
+            if (highlightRange == -1)
+            {
+                int addedToExistingRange = AddToExistingAdjacentRangeIfPossible(index);
+                if (addedToExistingRange == -1 && curBars < maxBars)
+                {
+                    InsertNewRange(index);
+                }
+            }
+        }
     }
 
     public void OnDrag(PointerEventData data)
     {
-        
+        int index = GetWordIndex(data.position, mainCam);
+
+        if (index != -1)
+        {
+            int highlightRange = GetHighlightRangeForWord(index);
+
+            if (highlightRange == -1)
+            {
+                int addedToExistingRange = AddToExistingAdjacentRangeIfPossible(index);
+                if (addedToExistingRange == -1 && curBars < maxBars)
+                {
+                    InsertNewRange(index);
+                }
+            }
+        }
+    }
+
+    public void OnEndDrag(PointerEventData pointerEventData)
+    {
+        dragging = false;
     }
 
     public string GetCurrentString()
