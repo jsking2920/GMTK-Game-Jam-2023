@@ -33,6 +33,8 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
 
     private bool dragging = false;
 
+    public bool editable = false;
+
     private void Start()
     {
         mainCam = Camera.main;
@@ -61,7 +63,7 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-        if (dragging) return;
+        if (dragging || !editable) return;
         
         int index = GetWordIndex(pointerEventData.position, mainCam);
 
@@ -86,6 +88,8 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
     
     public void OnBeginDrag(PointerEventData pointerEventData)
     {
+        if (!editable) return;
+
         dragging = true;
 
         int index = GetWordIndex(pointerEventData.position, mainCam);
@@ -107,6 +111,8 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
 
     public void OnDrag(PointerEventData data)
     {
+        if (!editable) return;
+
         int index = GetWordIndex(data.position, mainCam);
 
         if (index != -1)

@@ -134,6 +134,8 @@ MonoBehaviour:
   text: Test Sentence
   sentenceCam: {fileID: 8119055844084811743}
   imageCam: {fileID: 5554155332082731660}
+  responseImage: {fileID: 0}
+  barsRemainingUI: {fileID: 0}
 --- !u!1 &5319915007356716481
 GameObject:
   m_ObjectHideFlags: 0

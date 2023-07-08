@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class Sentence : MonoBehaviour
 {
@@ -12,10 +13,14 @@ public class Sentence : MonoBehaviour
     public CinemachineVirtualCamera sentenceCam;
     public CinemachineVirtualCamera imageCam;
 
+    public Image responseImage;
+    public BarsRemainingUI barsRemainingUI;
+
     private void Awake()
     {
         text = GameManager.Instance.sentenceDict.GetStringFromID(id);
         censorableText = GetComponentInChildren<HighlightableText>();
+        censorableText.editable = false;
 
         sentenceCam.enabled = false;
         imageCam.enabled = false;
@@ -44,11 +49,12 @@ public class Sentence : MonoBehaviour
         string result = censorableText.GetCurrentString();
         Response response = GameManager.Instance.sentenceDict.GetResponse(id, result);
         
-        
         GameManager.Instance.SetGameState(GameState.BetweenSentences);
         sentenceCam.enabled = false;
         imageCam.enabled = true;
-        // StartCoroutine(SubmitAnim());
+        censorableText.editable = false;
+        responseImage.sprite = response.image;
+        barsRemainingUI.gameObject.SetActive(false);
     }
 
     private void OnStartNextSentence(int nextId)
@@ -56,14 +62,12 @@ public class Sentence : MonoBehaviour
         if (nextId == id)
         {
             sentenceCam.enabled = true;
+            censorableText.editable = true;
         }
         else
         {
+            censorableText.editable = false;
             imageCam.enabled = false;
         }
     }
-
-    // private IEnumerator SubmitAnim()
-    // {
-    // }
 }
