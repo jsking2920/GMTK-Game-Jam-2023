@@ -6,12 +6,14 @@ using UnityEngine;
 
 [System.Serializable]
 public class IntResponseDictDictionary : SerializableDictionary<int, ResponseDict> { }
+[System.Serializable]
+public class IntStringDictionary : SerializableDictionary<int, string> { }
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/SentenceDict", order = 1)]
 public class SentenceDict : ScriptableObject
 {
     public IntResponseDictDictionary sentenceDict = new IntResponseDictDictionary();
-    public Dictionary<int, string> idToSentenceDict = new Dictionary<int, string>();
+    public IntStringDictionary idToSentenceDict = new IntStringDictionary();
 
     public Response defaultResponse;
 
