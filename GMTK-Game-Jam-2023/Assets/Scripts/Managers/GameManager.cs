@@ -34,7 +34,8 @@ public class GameManager : Singleton<GameManager>
     public static event Action FinishSentence;
     public static event Action ResetGame; //reset all relevant variables
 
-    public Sentence sentence1;
+    public Cinemachine.CinemachineVirtualCamera titleScreenVCam;
+    public Cinemachine.CinemachineVirtualCamera tutorialVCam;
 
     public override void Awake()
     {
@@ -52,17 +53,19 @@ public class GameManager : Singleton<GameManager>
         if (Input.GetMouseButtonDown(0) && _gamestate == GameState.MainMenu)
         {
             SetGameState(GameState.BetweenSentences);
+            titleScreenVCam.enabled = false;
+            tutorialVCam.enabled = true;
         }
 
         if (Input.GetMouseButtonDown(0) && _gamestate == GameState.BetweenSentences)
         {
+            tutorialVCam.enabled = false;
             SetGameState(GameState.Playing);
         }
     }
 
     public void SetGameState(GameState newGameState)
     {
-        // Debug.Log("");
         switch (newGameState)
         {
             case (GameState.MainMenu):
