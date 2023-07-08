@@ -27,15 +27,15 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     public Color blackoutColor = new Color(0.1f, 0.1f, 0.1f, 1.0f);
     public Color hoverOnBlackColor = new Color(0.3f, 0.3f, 0.3f, 0.35f);
     public Color hoverOnNormalColor = new Color(0.1f, 0.1f, 0.1f, 0.8f);
-    public string sentence = "This is a test! 'string' for testing the main mechanic of this game we're testing!";
+    public Sentence sentence;
 
 
     private void Awake()
     {
         text = GetComponent<TextMeshProUGUI>();
-        text.text = sentence;
+        text.text = sentence.text;
 
-        allWordsUntagged = sentence.Split(' '); // will consider punctuation to be part of the words
+        allWordsUntagged = sentence.text.Split(' '); // will consider punctuation to be part of the words
         allWordsTagged = new string[allWordsUntagged.Length];
         allWordsUntagged.CopyTo(allWordsTagged, 0);
 
@@ -125,5 +125,24 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
             blackedOutWordIndices.Remove(index);
         }
+    }
+
+    public string GetCurrentString()
+    {
+        if (blackedOutWordIndices.Count == allWordsUntagged.Length)
+        {
+            return "";
+        }
+        
+        string agg = "";
+        for (int i = 0; i < allWordsUntagged.Length; i++)
+        {
+            if (!blackedOutWordIndices.Contains(i))
+            {
+                agg += allWordsUntagged[i] + " ";
+            }
+        }
+        
+        return agg.Substring(0, agg.Length - 1);;
     }
 }
