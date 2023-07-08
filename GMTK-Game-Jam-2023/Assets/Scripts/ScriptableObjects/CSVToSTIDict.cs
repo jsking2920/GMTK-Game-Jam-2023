@@ -85,6 +85,10 @@ public class CSVToSTIDict
 
                     response.sideHeadline = splitLine[8];
                     Debug.Log(splitLine[8]);
+
+                    response.image =
+                        AssetDatabase.LoadAssetAtPath<Sprite>(
+                            $"Assets/Art/ResponseImages/{sentenceID}/{responseID}.png");
                 }
             }
 
