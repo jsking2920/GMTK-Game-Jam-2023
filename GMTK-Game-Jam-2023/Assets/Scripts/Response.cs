@@ -10,5 +10,5 @@ public class Response
     public Sprite image;
     
     //add stats etc in here
-    public int test;
+    public string sideHeadline;
 }

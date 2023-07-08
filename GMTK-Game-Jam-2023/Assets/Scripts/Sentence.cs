@@ -34,6 +34,5 @@ public class Sentence : MonoBehaviour
         string result = clickableText.GetCurrentString();
         Response response = GameManager.Instance.sentenceDict.GetResponse(text, result);
         
-        Debug.Log(response.test);
     }
 }
