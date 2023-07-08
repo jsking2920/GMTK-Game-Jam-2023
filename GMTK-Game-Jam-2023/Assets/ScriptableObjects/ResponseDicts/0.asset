@@ -43,11 +43,15 @@ MonoBehaviour:
     - 'army passes through gas. '
     m_values: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000200000002000000030000000300000005000000050000000500000005000000050000000500000005000000
   intToResponseDict:
-    m_keys: 000000000100000002000000
+    m_keys: 0000000001000000020000000300000004000000
     m_values:
-    - image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    - image: {fileID: 21300000, guid: 58b585951d808224a9c808f506bc95be, type: 3}
       sideHeadline: 
-    - image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-      sideHeadline: test1
-    - image: {fileID: 0}
-      sideHeadline: test2
+    - image: {fileID: 21300000, guid: 13f3babbfeb128c41a165350a8f351c9, type: 3}
+      sideHeadline: 
+    - image: {fileID: 21300000, guid: 3c4e68239a6bf0f4f85a1d7a83dd9d13, type: 3}
+      sideHeadline: 
+    - image: {fileID: 21300000, guid: 3cf81be3277f0dc409870ac089e9bddd, type: 3}
+      sideHeadline: 
+    - image: {fileID: 21300000, guid: 4accbe38b38cc8249aee0fc50312ddad, type: 3}
+      sideHeadline: 
