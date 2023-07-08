@@ -163,7 +163,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 62186278}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
@@ -282,7 +282,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: -22.22}
+  m_LocalPosition: {x: 0, y: 3.2, z: -17.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1083,7 +1083,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825999346}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.36, y: 2.44, z: -11.8}
+  m_LocalPosition: {x: 0, y: 3.2, z: -17.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1259,6 +1259,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3493369146241618160}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3493369146241618162 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5224809913502018333, guid: 9b28ffc7e8fe3584aa8b70fcc6aa78b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3493369146241618160}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5d34f8b5678e4dd38b793d59abc3990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5694280804637825354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1327,6 +1339,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 9039738191195782183, guid: c47b9dc2d8d0747dba7236bd4834a66c,
+        type: 3}
+      propertyPath: sentence1
+      value: 
+      objectReference: {fileID: 3493369146241618162}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

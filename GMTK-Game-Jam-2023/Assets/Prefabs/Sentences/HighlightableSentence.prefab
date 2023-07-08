@@ -92,7 +92,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7469990595879956684
 RectTransform:
   m_ObjectHideFlags: 0
@@ -130,7 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5d34f8b5678e4dd38b793d59abc3990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: This is a test sentence for highlighting and testing
+  text: Test Sentence
+  sentenceCam: {fileID: 8119055844084811743}
+  imageCam: {fileID: 5554155332082731660}
 --- !u!1 &5319915007356716481
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,6 +655,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6629352648931452511, guid: a50e614426003d04396f69454d529e10,
         type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: fd37689944a9b594890d0ec7cba446de,
+        type: 2}
+    - target: {fileID: 6629352648931452511, guid: a50e614426003d04396f69454d529e10,
+        type: 3}
       propertyPath: m_fontColor.b
       value: 0
       objectReference: {fileID: 0}
@@ -681,6 +689,12 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 0.85
       objectReference: {fileID: 0}
+    - target: {fileID: 6629352648931452511, guid: a50e614426003d04396f69454d529e10,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6371670360383176657, guid: fd37689944a9b594890d0ec7cba446de,
+        type: 2}
     - target: {fileID: 6629352648931452511, guid: a50e614426003d04396f69454d529e10,
         type: 3}
       propertyPath: m_enableAutoSizing

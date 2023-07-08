@@ -1,23 +1,26 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Sentence : MonoBehaviour
 {
     public string text; //doing public cuz game jam wooo
-    private string currentText;
-    private ClickableText clickableText;
+
+    private HighlightableText censorableText;
+
+    public CinemachineVirtualCamera sentenceCam;
+    public CinemachineVirtualCamera imageCam;
 
     private void Awake()
     {
-        clickableText = GetComponentInChildren<ClickableText>();
+        censorableText = GetComponentInChildren<HighlightableText>();
+
+        sentenceCam.enabled = false;
+        imageCam.enabled = false;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        currentText = text;
+        sentenceCam.enabled = true;
     }
 
     // Update is called once per frame
@@ -31,8 +34,10 @@ public class Sentence : MonoBehaviour
 
     public void Submit()
     {
-        string result = clickableText.GetCurrentString();
+        string result = censorableText.GetCurrentString();
         Response response = GameManager.Instance.sentenceDict.GetResponse(text, result);
-        
+
+        sentenceCam.enabled = false;
+        imageCam.enabled = true;
     }
 }

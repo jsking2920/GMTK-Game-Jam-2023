@@ -34,6 +34,8 @@ public class GameManager : Singleton<GameManager>
     public static event Action FinishSentence;
     public static event Action ResetGame; //reset all relevant variables
 
+    public Sentence sentence1;
+
     public override void Awake()
     {
         base.Awake();
@@ -42,7 +44,15 @@ public class GameManager : Singleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
-        // SetGameState(GameState.Menu);
+        SetGameState(GameState.MainMenu);
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && _gamestate == GameState.MainMenu)
+        {
+            sentence1.gameObject.SetActive(true);
+        }
     }
 
     public void SetGameState(GameState newGameState)
