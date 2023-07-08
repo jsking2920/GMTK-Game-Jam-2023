@@ -43,8 +43,12 @@ public class Sentence : MonoBehaviour
     {
         string result = censorableText.GetCurrentString();
         Response response = GameManager.Instance.sentenceDict.GetResponse(id, result);
-
-        StartCoroutine(SubmitAnim());
+        
+        
+        GameManager.Instance.SetGameState(GameState.BetweenSentences);
+        sentenceCam.enabled = false;
+        imageCam.enabled = true;
+        // StartCoroutine(SubmitAnim());
     }
 
     private void OnStartNextSentence(int nextId)
@@ -53,19 +57,13 @@ public class Sentence : MonoBehaviour
         {
             sentenceCam.enabled = true;
         }
-    }
-
-    private IEnumerator SubmitAnim()
-    {
-        sentenceCam.enabled = false;
-        imageCam.enabled = true;
-
-        //wait for player input to continue
-        while (!Input.GetMouseButton(0))
+        else
         {
-            yield return null;
+            imageCam.enabled = false;
         }
-
-        imageCam.enabled = false;
     }
+
+    // private IEnumerator SubmitAnim()
+    // {
+    // }
 }
