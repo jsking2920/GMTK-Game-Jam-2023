@@ -13,45 +13,8 @@ MonoBehaviour:
   m_Name: 0
   m_EditorClassIdentifier: 
   sentenceToIntDict:
-    m_keys:
-    - "General Morgan\u2019s army passes through City* with poison gas."
-    - army passes through Kotka City* killed thousands.
-    - "General Morgan\u2019s army killed thousands."
-    - army killed thousands with poison gas.
-    - Kotka City* killed with poison gas.
-    - "General Morgan\u2019s army passes Kotka City* killed thousands with gas."
-    - "General Morgan\u2019s army passes through City* killed thousands with gas."
-    - "General Morgan\u2019s army passes through killed thousands with poison gas."
-    - army passes through Kotka City*.
-    - "General Morgan\u2019s army passes through Kotka City*."
-    - "General Morgan\u2019s army passes. "
-    - General Morgan killed with poison gas.
-    - "Morgan\u2019s army passes through Kotka City* killed with poison gas."
-    - "General Morgan\u2019s army killed with poison gas."
-    - "General Morgan\u2019s army passes through killed with poison gas. "
-    - "General Morgan\u2019s army passes with poison gas. "
-    - 'General Kotka killed thousands with poison gas. '
-    - 'Kotka killed thousands with poison gas. '
-    - 'City* killed thousands with poison gas. '
-    - 'Kotka City* killed thousands with poison gas. '
-    - "General Morgan\u2019s army passes gas. "
-    - 'army passes gas. '
-    - "General Morgan\u2019s passes gas. "
-    - 'General passes gas. '
-    - "General Morgan\u2019s passes through gas. "
-    - 'General passes through gas. '
-    - 'army passes through gas. '
-    m_values: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000200000002000000030000000300000005000000050000000500000005000000050000000500000005000000
+    m_keys: []
+    m_values: 
   intToResponseDict:
-    m_keys: 0000000001000000020000000300000004000000
-    m_values:
-    - image: {fileID: 21300000, guid: 58b585951d808224a9c808f506bc95be, type: 3}
-      sideHeadline: 
-    - image: {fileID: 21300000, guid: 13f3babbfeb128c41a165350a8f351c9, type: 3}
-      sideHeadline: 
-    - image: {fileID: 21300000, guid: 3c4e68239a6bf0f4f85a1d7a83dd9d13, type: 3}
-      sideHeadline: 
-    - image: {fileID: 21300000, guid: 3cf81be3277f0dc409870ac089e9bddd, type: 3}
-      sideHeadline: 
-    - image: {fileID: 21300000, guid: 4accbe38b38cc8249aee0fc50312ddad, type: 3}
-      sideHeadline: 
+    m_keys: 
+    m_values: []

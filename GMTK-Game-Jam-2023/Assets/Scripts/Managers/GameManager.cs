@@ -1,12 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public enum GameState
 {
     MainMenu,
+    Tutorial,
     Playing,
     BetweenSentences,
     End
@@ -50,17 +48,24 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && _gamestate == GameState.MainMenu)
+        if (Input.GetMouseButtonDown(0))
         {
-            SetGameState(GameState.BetweenSentences);
-            titleScreenVCam.enabled = false;
-            tutorialVCam.enabled = true;
-        }
-
-        if (Input.GetMouseButtonDown(0) && _gamestate == GameState.BetweenSentences)
-        {
-            tutorialVCam.enabled = false;
-            SetGameState(GameState.Playing);
+            if (Input.GetMouseButtonDown(0) && _gamestate == GameState.MainMenu)
+            {
+                SetGameState(GameState.Tutorial);
+                titleScreenVCam.enabled = false;
+                tutorialVCam.enabled = true;
+            }
+            else if (_gamestate == GameState.Tutorial)
+            {
+                tutorialVCam.enabled = false;
+                SetGameState(GameState.Playing);
+            }
+            else if (Input.GetMouseButtonDown(0) && _gamestate == GameState.BetweenSentences)
+            {
+                tutorialVCam.enabled = false;
+                SetGameState(GameState.Playing);
+            }
         }
     }
 
@@ -74,13 +79,18 @@ public class GameManager : Singleton<GameManager>
                 ResetGame?.Invoke();
                 break;
             }
+            case (GameState.Tutorial):
+            {
+                currentSentence = 0;
+                GameStart?.Invoke();
+                break;
+            }
             case (GameState.BetweenSentences):
             {
-                if (GameState == GameState.MainMenu || GameState == GameState.End)
+                if (GameState == GameState.End)
                 {
                     currentSentence = 0;
                     ResetGame?.Invoke();
-                    GameStart?.Invoke();
                 }
                 else
                 {

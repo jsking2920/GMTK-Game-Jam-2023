@@ -19,7 +19,7 @@ public class SentenceDict : ScriptableObject
 
     public Response GetResponse(int id, string finalText)
     {
-        Response ret = sentenceDict[id].StringToResponse(finalText.ToLower());
+        Response ret = sentenceDict[id].StringToResponse(finalText);
         if (ret == null)
         {
             return defaultResponse;

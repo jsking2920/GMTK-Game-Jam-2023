@@ -12,6 +12,9 @@ public class BarsRemainingUI : MonoBehaviour
 
     public void UpdateUI(int barsRemaining)
     {
-        text.text = "Censor bars: " + barsRemaining;
+        if (text != null)
+        {
+            text.text = "Censor bars: " + barsRemaining;
+        }
     }
 }

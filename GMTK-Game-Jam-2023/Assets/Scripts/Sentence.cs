@@ -30,15 +30,15 @@ public class Sentence : MonoBehaviour
     {
         GameManager.StartNextSentence += OnStartNextSentence;
     }
+
     private void OnDisable()
     {
         GameManager.StartNextSentence -= OnStartNextSentence;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && censorableText.editable)
         {
             Submit();
         }
