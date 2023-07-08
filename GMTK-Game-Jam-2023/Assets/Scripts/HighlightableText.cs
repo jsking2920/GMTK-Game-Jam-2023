@@ -124,11 +124,7 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
 
             if (highlightRange == -1)
             {
-                int addedToExistingRange = AddToExistingAdjacentRangeIfPossible(index);
-                if (addedToExistingRange == -1 && curBars < maxBars)
-                {
-                    InsertNewRange(index);
-                }
+                AddToExistingAdjacentRangeIfPossible(index);
             }
         }
     }
