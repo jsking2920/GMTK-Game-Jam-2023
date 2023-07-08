@@ -9,6 +9,8 @@ public class CSVToSTIDict
     public static string[] paths =
     {
         "0",
+        "1",
+        "2",
 
     };
 
@@ -18,6 +20,7 @@ public class CSVToSTIDict
         SentenceDict sentenceDict = 
             AssetDatabase.LoadAssetAtPath<SentenceDict>("Assets/ScriptableObjects/SentenceDict.asset");
         sentenceDict.sentenceDict.Clear();
+        sentenceDict.idToSentenceDict.Clear();
         
         foreach (string name in paths)
         {
@@ -64,7 +67,7 @@ public class CSVToSTIDict
                 {
                     Debug.LogWarning("Unparseable response ID: " + splitLine[4] + ". one line " + i);
                 }
-                if (!newDict.sentenceToIntDict.TryAdd(splitLine[1], responseID))
+                if (!newDict.sentenceToIntDict.TryAdd(splitLine[1].ToLower(), responseID))
                 {
                     Debug.LogWarning("Duplicate key detected in " + name + ".csv. Sentence" + splitLine[1] + ": " + splitData[1]);
                 }

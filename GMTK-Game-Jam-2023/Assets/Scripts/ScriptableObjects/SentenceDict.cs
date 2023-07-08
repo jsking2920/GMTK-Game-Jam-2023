@@ -17,7 +17,7 @@ public class SentenceDict : ScriptableObject
 
     public Response GetResponse(int id, string finalText)
     {
-        Response ret = sentenceDict[id].StringToResponse(finalText);
+        Response ret = sentenceDict[id].StringToResponse(finalText.ToLower());
         if (ret == null)
         {
             return defaultResponse;

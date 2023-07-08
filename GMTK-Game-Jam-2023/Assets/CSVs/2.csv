@@ -1,0 +1,19 @@
+Sentence ,finalSentence,indices,order,responseID,,responseID,imageDescription,sideArticleHeadline,fufillsPrompt
+Governor Assassinated After Stealing Hotdogs From Children; Orange Party Blamed,Governor Assassinated After Stealing Hotdogs From Children,,,0,,0,"oliver taking hot dogs from children, sniper in the bg",,false
+sentenceID ,Governor Assassinated After Stealing From Children,,,0,,1,oliver assassinated by a sniper,,true
+2,Governor Assassinated,,,0,,2,"oliver lying dead, a hot dog with a knife looming over him",,false
+defaultOrder,Governor Assassinated Orange Party,,,0,,3,"oliver lying dead, a group of menacing children looming over him",,false
+,Governor Blamed,,,0,,4,oliver kidnapping children from a daycare,,false
+type (0=simple 1=complex 2=bars),Governor Assassinated After Orange Party,,,0,,5,"oliver lying dead, a orange with a knife looming over him",,false
+,Governor Assassinated After Stealing,,,0,,6,oliver stealing an orange,,false
+maxInk,Governor Assassinated Orange Party Blamed,,,1,,7,oliver attacking a group of children with a knife,,false
+2,Governor Assassinated,,,1,,,,,
+editorsPrompt,Governor Assassinated Hotdogs Blamed,,,2,,,,,
+Oliver was one of the state's top officials! Don't let him look bad.,Governor Assassinated Children Blamed,,,3,,,,,
+,Governor Assassinated After Stealing Children; Orange Party Blamed,,,4,,,,,
+,Governor Stealing Children; Orange Party Blamed,,,4,,,,,
+,Governor Assassinated Orange Blamed,,,5,,,,,
+,Governor Assassinated After Stealing Orange ,,,6,,,,,
+,Governor Stealing Orange ,,,6,,,,,
+,Governor Assassinated Children,,,7,,,,,
+,Governor Assassinated Children; Orange Party Blamed,,,7,,,,,

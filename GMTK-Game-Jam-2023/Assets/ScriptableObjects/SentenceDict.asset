@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: SentenceDict
   m_EditorClassIdentifier: 
   sentenceDict:
-    m_keys:
-    - Test Sentence
+    m_keys: 00000000
     m_values:
-    - {fileID: 11400000, guid: 2bedca97f353841b7b9f9c5deefb9fdf, type: 2}
+    - {fileID: 11400000, guid: df61523999d9949d6973003fafbf5329, type: 2}
+  defaultResponse:
+    image: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    sideHeadline: Illustrator Quits Job
