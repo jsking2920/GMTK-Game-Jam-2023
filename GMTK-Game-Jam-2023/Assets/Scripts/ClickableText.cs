@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using System.Collections.Generic;
 using System;
 using UnityEngine.Rendering;
+using System.Linq;
 
 public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -17,6 +18,7 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
     private string[] allWordsUntagged; // Array of the original words in the text, no rich text tags included
     private string[] allWordsTagged; // Actual words being displayed, including rich text modifiers
+    
 
     private HashSet<int> blackedOutWordIndices = new HashSet<int>();
 
@@ -32,27 +34,44 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     public Sentence sentence;
 
 
-    private void Awake()
+    [Header("Simple or complex word delineation")]
+    public bool simpleDelineation = false;
+    public char seperator = '^'; // '^' for complex; ' ' for simple
+    public string joiner = ""; // "" for complex; " " for simple
+    private int[] wordLengths;
+
+
+    private void Start()
     {
         mainCam = Camera.main;
 
         text = GetComponent<TextMeshProUGUI>();
-        text.text = sentence.text;
 
-        allWordsUntagged = sentence.text.Split(' '); // will consider punctuation to be part of the words
+        allWordsUntagged = sentence.text.Split(seperator);
         allWordsTagged = new string[allWordsUntagged.Length];
         allWordsUntagged.CopyTo(allWordsTagged, 0);
+
+        text.text = string.Join(joiner, allWordsTagged);
 
         blackoutRichTextTagOpener = "<mark=#" + blackoutColor.ToHexString() + ">";
         hoverRichTextTagOpener = "<mark=#" + hoverOnBlackColor.ToHexString() + ">";
         hoverOnNormalRichTextTagOpener = "<mark=#" + hoverOnNormalColor.ToHexString() + ">";
+
+        if (!simpleDelineation)
+        {
+            wordLengths = new int[allWordsTagged.Length];
+            for (int i = 0; i < allWordsUntagged.Length; i++)
+            {
+                wordLengths[i] = allWordsUntagged[i].Length;
+            }
+        }
     }
 
     private void Update()
     {
         if (hovering)
         {
-            highlightedWordIndex = TMP_TextUtilities.FindIntersectingWord(text, Input.mousePosition, mainCam);
+            highlightedWordIndex = GetWordIndex(Input.mousePosition, mainCam);
 
             if (highlightedWordIndex != prevHighlightedWordIndex)
             {
@@ -70,7 +89,7 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterH
                     {
                         allWordsTagged[highlightedWordIndex] = hoverOnNormalRichTextTagOpener + allWordsUntagged[highlightedWordIndex] + richTextTagCloser;
                     }
-                    text.text = string.Join(" ", allWordsTagged);
+                    text.text = string.Join(joiner, allWordsTagged);
                 }
                 prevHighlightedWordIndex = highlightedWordIndex;
             }
@@ -79,8 +98,7 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-        // See: https://docs.unity3d.com/Packages/com.unity.textmeshpro@1.3/api/TMPro.TMP_TextUtilities.html
-        int index = TMP_TextUtilities.FindIntersectingWord(text, pointerEventData.position, mainCam);
+        int index = GetWordIndex(pointerEventData.position, mainCam);
 
         if (index != -1)
         {
@@ -104,12 +122,12 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         if (blackedOutWordIndices.Contains(index))
         {
             allWordsTagged[index] = blackoutRichTextTagOpener + allWordsUntagged[index] + richTextTagCloser;
-            text.text = string.Join(" ", allWordsTagged);
+            text.text = string.Join(joiner, allWordsTagged);
         }
         else
         {
             allWordsTagged[index] = allWordsUntagged[index];
-            text.text = string.Join(" ", allWordsTagged);
+            text.text = string.Join(joiner, allWordsTagged);
         }
     }
 
@@ -118,14 +136,14 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         if (!blackedOutWordIndices.Contains(index))
         {
             allWordsTagged[index] = blackoutRichTextTagOpener + allWordsUntagged[index] + richTextTagCloser;
-            text.text = string.Join(" ", allWordsTagged);
+            text.text = string.Join(joiner, allWordsTagged);
 
             blackedOutWordIndices.Add(index);
         }
         else
         {
             allWordsTagged[index] = allWordsUntagged[index];
-            text.text = string.Join(" ", allWordsTagged);
+            text.text = string.Join(joiner, allWordsTagged);
 
             blackedOutWordIndices.Remove(index);
         }
@@ -143,10 +161,40 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         {
             if (!blackedOutWordIndices.Contains(i))
             {
-                agg += allWordsUntagged[i] + " ";
+                agg += allWordsUntagged[i] + joiner;
             }
         }
-        
-        return agg.Substring(0, agg.Length - 1);;
+
+        if (joiner.Length > 0)
+        {
+            return agg.Substring(0, agg.Length - 1);
+        }
+        else
+        {
+            return agg;
+        }
+    }
+
+    private int GetWordIndex(Vector3 pos, Camera cam)
+    {
+        if (simpleDelineation)
+        {
+            return TMP_TextUtilities.FindIntersectingWord(text, pos, mainCam);
+        }
+        else
+        {
+            int charIndex = TMP_TextUtilities.FindIntersectingCharacter(text, pos, cam, false);
+
+            if (charIndex == -1) return -1;
+
+            int accumulator = 0;
+
+            for (int i = 0; i < wordLengths.Length; i++)
+            {
+                accumulator += wordLengths[i];
+                if (charIndex < accumulator) return i;
+            }
+            return -1;
+        }
     }
 }
