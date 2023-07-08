@@ -41,7 +41,10 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
 
         text = GetComponent<TextMeshProUGUI>();
 
-        allWordsUntagged = sentence.text.Split(seperator);
+        // commas are swapped with asterisks in the csv files so replace them
+        string sentenceText = sentence.text.Replace('*', ',');
+
+        allWordsUntagged = sentenceText.Split(seperator);
         allWordsTagged = new string[allWordsUntagged.Length];
         allWordsUntagged.CopyTo(allWordsTagged, 0);
 
@@ -148,12 +151,11 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
 
         if (joiner.Length > 0)
         {
-            return agg.Substring(0, agg.Length - 1);
+            agg = agg.Substring(0, agg.Length - 1);
         }
-        else
-        {
-            return agg;
-        }
+
+        agg = agg.Replace(',', '*'); // commas replaces with asterisks in the csv files
+        return agg;
     }
 
     private int GetWordIndex(Vector3 pos, Camera cam)
