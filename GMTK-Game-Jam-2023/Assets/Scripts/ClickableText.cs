@@ -4,9 +4,11 @@ using TMPro;
 using Unity.VisualScripting;
 using System.Collections.Generic;
 using System;
+using UnityEngine.Rendering;
 
 public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    private Camera mainCam;
     private TextMeshProUGUI text;
 
     private bool hovering = false;
@@ -32,6 +34,8 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterH
 
     private void Awake()
     {
+        mainCam = Camera.main;
+
         text = GetComponent<TextMeshProUGUI>();
         text.text = sentence.text;
 
@@ -48,7 +52,7 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     {
         if (hovering)
         {
-            highlightedWordIndex = TMP_TextUtilities.FindIntersectingWord(text, Input.mousePosition, null); // camera is null for screen space overlay camera
+            highlightedWordIndex = TMP_TextUtilities.FindIntersectingWord(text, Input.mousePosition, mainCam);
 
             if (highlightedWordIndex != prevHighlightedWordIndex)
             {
@@ -76,7 +80,7 @@ public class ClickableText : MonoBehaviour, IPointerClickHandler, IPointerEnterH
     public void OnPointerClick(PointerEventData pointerEventData)
     {
         // See: https://docs.unity3d.com/Packages/com.unity.textmeshpro@1.3/api/TMPro.TMP_TextUtilities.html
-        int index = TMP_TextUtilities.FindIntersectingWord(text, pointerEventData.position, null); // camera is null for screen space overlay camera
+        int index = TMP_TextUtilities.FindIntersectingWord(text, pointerEventData.position, mainCam);
 
         if (index != -1)
         {

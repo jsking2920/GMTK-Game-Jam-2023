@@ -87,32 +87,32 @@ PrefabInstance:
     - target: {fileID: 3365927072591298610, guid: d3cfe1ca43e95a64681d7fc29f4b0501,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.74600005
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3365927072591298610, guid: d3cfe1ca43e95a64681d7fc29f4b0501,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.558
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3365927072591298610, guid: d3cfe1ca43e95a64681d7fc29f4b0501,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.25100002
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3365927072591298610, guid: d3cfe1ca43e95a64681d7fc29f4b0501,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.37100002
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3365927072591298610, guid: d3cfe1ca43e95a64681d7fc29f4b0501,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 399.96005
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3365927072591298610, guid: d3cfe1ca43e95a64681d7fc29f4b0501,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 75.922
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3365927072591298610, guid: d3cfe1ca43e95a64681d7fc29f4b0501,
         type: 3}
@@ -177,7 +177,7 @@ PrefabInstance:
     - target: {fileID: 5869193076618303063, guid: d3cfe1ca43e95a64681d7fc29f4b0501,
         type: 3}
       propertyPath: m_fontSize
-      value: 53.15
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
