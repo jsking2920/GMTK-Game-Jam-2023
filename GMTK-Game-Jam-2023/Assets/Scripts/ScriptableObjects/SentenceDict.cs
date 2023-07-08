@@ -5,15 +5,31 @@ using UnityEditor;
 using UnityEngine;
 
 [System.Serializable]
-public class StringResponseDictDictionary : SerializableDictionary<string, ResponseDict> { }
+public class IntResponseDictDictionary : SerializableDictionary<int, ResponseDict> { }
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/SentenceDict", order = 1)]
 public class SentenceDict : ScriptableObject
 {
-    public StringResponseDictDictionary sentenceDict;
+    public IntResponseDictDictionary sentenceDict = new IntResponseDictDictionary();
+    public Dictionary<int, string> idToSentenceDict = new Dictionary<int, string>();
 
-    public Response GetResponse(string sentence, string finalText)
+    public Response defaultResponse;
+
+    public Response GetResponse(int id, string finalText)
     {
-        return sentenceDict[sentence].StringToResponse(finalText);
+        Response ret = sentenceDict[id].StringToResponse(finalText);
+        if (ret == null)
+        {
+            return defaultResponse;
+        }
+        else
+        {
+            return ret;
+        }
+    }
+
+    public string GetStringFromID(int id)
+    {
+        return idToSentenceDict[id];
     }
 }
