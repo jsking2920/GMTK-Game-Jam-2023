@@ -92,7 +92,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7469990595879956684
 RectTransform:
   m_ObjectHideFlags: 0
@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5d34f8b5678e4dd38b793d59abc3990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   text: Test Sentence
   sentenceCam: {fileID: 8119055844084811743}
   imageCam: {fileID: 5554155332082731660}

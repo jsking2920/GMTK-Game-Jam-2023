@@ -18,7 +18,11 @@ public class ResponseDict : ScriptableObject
 
     public Response StringToResponse(string input)
     {
-        int index = sentenceToIntDict[input];
+        int index;
+        if (!sentenceToIntDict.TryGetValue(input, out index))
+        {
+            return null;
+        }
         return intToResponseDict[index];
     }
 }

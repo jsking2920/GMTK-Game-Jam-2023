@@ -51,7 +51,12 @@ public class GameManager : Singleton<GameManager>
     {
         if (Input.GetMouseButtonDown(0) && _gamestate == GameState.MainMenu)
         {
-            sentence1.gameObject.SetActive(true);
+            SetGameState(GameState.BetweenSentences);
+        }
+
+        if (Input.GetMouseButtonDown(0) && _gamestate == GameState.BetweenSentences)
+        {
+            SetGameState(GameState.Playing);
         }
     }
 

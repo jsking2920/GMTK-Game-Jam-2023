@@ -51,7 +51,8 @@ public class CSVToSTIDict
                 newDict.sentenceToIntDict.Clear();
             }
             
-            sentenceDict.sentenceDict.Add(sentence, newDict);
+            sentenceDict.sentenceDict.Add(sentenceID, newDict);
+            sentenceDict.idToSentenceDict.Add(sentenceID, sentence);
             
             for (int i = 1; i < allLines.Length; i++)
             {
