@@ -67,7 +67,13 @@ public class CSVToSTIDict
                 {
                     Debug.LogWarning("Unparseable response ID: " + splitLine[4] + ". one line " + i);
                 }
-                if (!newDict.sentenceToIntDict.TryAdd(splitLine[1].ToLower(), responseID))
+
+                string sentenceToAdd = splitLine[1].ToLower();
+                if (sentenceToAdd[sentenceToAdd.Length - 1] == ' ')
+                {
+                    sentenceToAdd = sentenceToAdd.Substring(0, sentenceToAdd.Length - 1);
+                }
+                if (!newDict.sentenceToIntDict.TryAdd(sentenceToAdd, responseID))
                 {
                     Debug.LogWarning("Duplicate key detected in " + name + ".csv. Sentence" + splitLine[1] + ": " + splitData[1]);
                 }
