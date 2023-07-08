@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e048b92798b443d783d9def1d2e03de, type: 3}
+  m_Name: 0
+  m_EditorClassIdentifier: 
+  sentenceToIntDict:
+    m_keys:
+    - "General Morgan\u2019s army passes through City* with poison gas."
+    - army passes through Kotka City* killed thousands.
+    - "General Morgan\u2019s army killed thousands."
+    - army killed thousands with poison gas.
+    - Kotka City* killed with poison gas.
+    - "General Morgan\u2019s army passes Kotka City* killed thousands with gas."
+    - "General Morgan\u2019s army passes through City* killed thousands with gas."
+    - "General Morgan\u2019s army passes through killed thousands with poison gas."
+    - army passes through Kotka City*.
+    - "General Morgan\u2019s army passes through Kotka City*."
+    - "General Morgan\u2019s army passes. "
+    - General Morgan killed with poison gas.
+    - "Morgan\u2019s army passes through Kotka City* killed with poison gas."
+    - "General Morgan\u2019s army killed with poison gas."
+    - "General Morgan\u2019s army passes through killed with poison gas. "
+    - "General Morgan\u2019s army passes with poison gas. "
+    - 'General Kotka killed thousands with poison gas. '
+    - 'Kotka killed thousands with poison gas. '
+    - 'City* killed thousands with poison gas. '
+    - 'Kotka City* killed thousands with poison gas. '
+    - "General Morgan\u2019s army passes gas. "
+    - 'army passes gas. '
+    - "General Morgan\u2019s passes gas. "
+    - 'General passes gas. '
+    - "General Morgan\u2019s passes through gas. "
+    - 'General passes through gas. '
+    - 'army passes through gas. '
+    m_values: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000010000000100000001000000010000000200000002000000030000000300000005000000050000000500000005000000050000000500000005000000
+  intToResponseDict:
+    m_keys: 000000000100000002000000
+    m_values:
+    - image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+      sideHeadline: 
+    - image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+      sideHeadline: test1
+    - image: {fileID: 0}
+      sideHeadline: test2

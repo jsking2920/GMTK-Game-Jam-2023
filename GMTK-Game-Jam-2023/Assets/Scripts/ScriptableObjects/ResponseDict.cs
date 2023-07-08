@@ -5,16 +5,16 @@ using UnityEditor;
 using UnityEngine;
 
 [System.Serializable]
-public class StringIntDictionary : SerializableDictionary<string, int> { }
+public class IntResponseDictionary : SerializableDictionary<int, Response> { }
 
 [System.Serializable]
-public class IntResponseDictionary : SerializableDictionary<int, Response> { }
+public class StringIntDictionary : SerializableDictionary<string, int> { }
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/ResponseDict", order = 1)]
 public class ResponseDict : ScriptableObject
 {
-    [SerializeField] public StringIntDictionary sentenceToIntDict;
-    [SerializeField] public IntResponseDictionary intToResponseDict;
+    [SerializeField] public StringIntDictionary sentenceToIntDict = new StringIntDictionary();
+    [SerializeField] public IntResponseDictionary intToResponseDict = new IntResponseDictionary();
 
     public Response StringToResponse(string input)
     {
