@@ -76,12 +76,13 @@ public class GameManager : Singleton<GameManager>
                 }
                 else if (currentSentence > 3)
                 {
+                    Debug.Log(score);
                     //Set up ending, this is a jank way yes but sue me
-                    if (score < -0.4f)
+                    if (score/4 < -0.4f)
                     {
                         currentSentence = 4;
                     } 
-                    else if (score < 0.4f)
+                    else if (score/4 < 0.4f)
                     {
                         currentSentence = 5;
                     }
