@@ -9,7 +9,7 @@ public class Sentence : MonoBehaviour
     [HideInInspector] public string text; //set from csv file
     public bool requiresMaxBarsToBeUsed = false;
 
-    private HighlightableText censorableText;
+    protected HighlightableText censorableText;
 
     public CinemachineVirtualCamera sentenceCam;
     public CinemachineVirtualCamera imageCam;
@@ -62,7 +62,7 @@ public class Sentence : MonoBehaviour
         }
     }
 
-    public void Submit()
+    public virtual void Submit()
     {
         if (!censorableText.editable) return;
 
@@ -75,7 +75,7 @@ public class Sentence : MonoBehaviour
         responseImage.sprite = response.image;
         barsRemainingUI.gameObject.SetActive(false);
         GameManager.Instance.score += response.fulfillsPrompt;
-        if (subtitle) subtitle.WriteSubtitle(response.sideHeadline);
+        if (subtitle && subtitle.enabled && subtitle.gameObject.activeInHierarchy) subtitle.WriteSubtitle(response.sideHeadline);
         FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Submit");
         
         submitButton.gameObject.SetActive(false);
@@ -118,5 +118,19 @@ public class Sentence : MonoBehaviour
         //responseImage.sprite = null;
         //censorableText.ResetText();
         //subtitle.Clear();
+    }
+
+    public virtual void UpdateSubmittable()
+    {
+        string result = censorableText.GetCurrentString();
+        Response response = GameManager.Instance.sentenceDict.GetResponse(id, result);
+        if (response.image == null) //jank check for default response
+        {
+            submitButton.enabled = false;
+        }
+        else
+        {
+            submitButton.enabled = true;
+        }
     }
 }

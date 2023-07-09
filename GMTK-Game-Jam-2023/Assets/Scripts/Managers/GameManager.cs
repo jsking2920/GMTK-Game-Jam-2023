@@ -76,6 +76,7 @@ public class GameManager : Singleton<GameManager>
                 }
                 else if (currentSentence > 3)
                 {
+                    gameState = GameState.Playing;
                     Debug.Log(score);
                     //Set up ending, this is a jank way yes but sue me
                     if (score/4 < -0.4f)
@@ -94,7 +95,7 @@ public class GameManager : Singleton<GameManager>
                     StartNextSentence?.Invoke(currentSentence);
                     
                     //hopefully this does not break anything but likely culprit
-                    currentSentence = 6;
+                    currentSentence = 7;
                 }
                 else
                 {
