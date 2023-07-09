@@ -77,7 +77,7 @@ public class Sentence : MonoBehaviour
         responseImage.sprite = response.image;
         barsRemainingUI.gameObject.SetActive(false);
         GameManager.Instance.score += response.fulfillsPrompt;
-        subtitle.WriteSubtitle(response.sideHeadline);
+        if (subtitle) subtitle.WriteSubtitle(response.sideHeadline);
         
         submitButton.gameObject.SetActive(false);
 
