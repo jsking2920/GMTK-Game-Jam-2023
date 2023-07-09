@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2128,6 +2128,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5813768661281719132, guid: c47b9dc2d8d0747dba7236bd4834a66c,
+        type: 3}
+      propertyPath: penTex
+      value: 
+      objectReference: {fileID: 2800000, guid: 02a9a57c85ac64447b4a69066f8a9908, type: 3}
     - target: {fileID: 5813768661281719132, guid: c47b9dc2d8d0747dba7236bd4834a66c,
         type: 3}
       propertyPath: tutorialVCam
