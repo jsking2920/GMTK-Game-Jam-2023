@@ -159,7 +159,7 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
         string agg = "";
         for (int i = 0; i < allWordsUntagged.Length; i++)
         {
-            if (GetHighlightRangeForWord(i) == -1)
+            if (GetHighlightRangeForWord(i) == -1 && allWordsUntagged[i] != "")
             {
                 agg += allWordsUntagged[i] + joiner;
             }
@@ -279,6 +279,11 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
             }
         }
         text.text = string.Join(joiner, allWordsTagged);
+
+        if (sentence.id > 3)
+        {
+            sentence.UpdateSubmittable();
+        }
     }
 
     private void SetCurBars(int bars)
@@ -291,32 +296,38 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
         }
     }
 
-    /*
-    public void ResetText()
+    public void ChangeOriginalText(string newText)
     {
-        // commas are swapped with asterisks in the csv files so replace them
-        string sentenceText = sentence.text.Replace('*', ',');
-
-        allWordsUntagged = sentenceText.Split(seperator);
-        allWordsTagged = new string[allWordsUntagged.Length];
-        allWordsUntagged.CopyTo(allWordsTagged, 0);
-
-        text.text = string.Join(joiner, allWordsTagged);
-
-        highlightedRanges.Clear();
-        dragging = false;
-
-        if (!simpleDelineation)
-        {
-            wordLengths = new int[allWordsTagged.Length];
-            for (int i = 0; i < allWordsUntagged.Length; i++)
-            {
-                wordLengths[i] = allWordsUntagged[i].Length;
-            }
-        }
-
-        SetCurBars(0);
-        SetText();
+        text.text = newText;
+        ResetText();
     }
-    */
+
+     
+     public void ResetText()
+     {
+         // commas are swapped with asterisks in the csv files so replace them
+         string sentenceText = sentence.text.Replace('*', ',');
+
+         allWordsUntagged = sentenceText.Split(seperator);
+         allWordsTagged = new string[allWordsUntagged.Length];
+         allWordsUntagged.CopyTo(allWordsTagged, 0);
+
+         text.text = string.Join(joiner, allWordsTagged);
+
+         highlightedRanges.Clear();
+         dragging = false;
+
+         if (!simpleDelineation)
+         {
+             wordLengths = new int[allWordsTagged.Length];
+             for (int i = 0; i < allWordsUntagged.Length; i++)
+             {
+                 wordLengths[i] = allWordsUntagged[i].Length;
+             }
+         }
+
+         SetCurBars(0);
+         SetText();
+     }
+     
 }

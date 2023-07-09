@@ -10,6 +10,7 @@ public class EndSentence : Sentence
         {
             id = nextId;
             text = GameManager.Instance.sentenceDict.GetStringFromID(id);
+            censorableText.ChangeOriginalText(text);
         }
         base.OnStartNextSentence(nextId);
     }
