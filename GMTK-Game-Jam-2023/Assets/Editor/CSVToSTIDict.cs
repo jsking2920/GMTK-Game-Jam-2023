@@ -101,6 +101,10 @@ public class CSVToSTIDict
 
                     response.sideHeadline = splitLine[8];
 
+                    if (sentenceID == 4)
+                    {
+                        Debug.Log("A");
+                    }
                     response.image =
                         AssetDatabase.LoadAssetAtPath<Sprite>(
                             $"Assets/Art/ResponseImages/{sentenceID}/{responseID}.png");
