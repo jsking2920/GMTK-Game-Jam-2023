@@ -13,62 +13,12 @@ MonoBehaviour:
   m_Name: 3
   m_EditorClassIdentifier: 
   sentenceToIntDict:
-    m_keys:
-    - scientists are cut in half* geese migration patterns reveal pesticides used
-      in southern regions are likely at fault
-    - scientists are growing concerned as geese migrations patterns reveal pesticides
-      used in southern regions
-    - scientists are growing geese migration patterns reveal pesticides used in southern
-      regions are likely at fault
-    - bird population is cut in half* geese migrations patterns reveal pesticides
-      used in southern regions are likely at fault
-    - scientists are geese
-    - scientists are geese southern regions are likely at fault
-    - scientists are cut in half* geese are likely at fault
-    - scientists are cut in half* geese migration patterns are likely at fault
-    - scientists are cut in half* geese at fault
-    - scientists are cut in half* geese migration patterns at fault
-    - bird population is cut in half* geese are likely at fault
-    - bird population is cut in half* geese migration patterns at fault
-    - bird population is cut in half* geese migration patterns likely at fault
-    - bird population is cut in half* geese at fault
-    - scientists are cut in half* geese regions are likely at fault
-    - bird population is cut in half* geese regions are likely at fault
-    - scientists are growing concerned as the bird population is cut in half* geese
-      migration patterns are likely at fault
-    - scientists population is cut in half* geese are likely at fault
-    - scientists population is cut in half* geese migration patterns are likely at
-      fault
-    - scientists population is cut in half* geese at fault
-    - scientists are growing concerned as the bird population is cut in half* geese
-      regions are likely at fault
-    - scientists are growing as the bird population is cut in half* geese are likely
-      at fault
-    - scientists are growing as the bird population is cut in half* geese migration
-      patterns are likely at fault
-    - scientists are is cut in half* southern regions are likely at fault
-    - scientists population is cut in half* geese migration patterns reveal southern
-      regions are likely at fault
-    - scientists population is cut in half* geese migration patterns reveal pesticides
-      used in southern regions are likely at fault
-    - scientists are growing geese
-    - scientists are used in southern regions
-    - scientists reveal pesticides used in southern regions
-    - scientists are growing geese migration patterns are likely at fault
-    - scientists are growing geese are likely at fault
-    - scientists are growing geese migration patterns reveal southern regions are
-      likely at fault
-    m_values: 0000000000000000000000000000000001000000010000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000030000000300000003000000040000000500000005000000060000000600000006000000
+    m_keys: []
+    m_values: 
   intToResponseDict:
-    m_keys: 0000000001000000
-    m_values:
-    - image: {fileID: 21300000, guid: 6d2b8c84e16d6a54d8114e0d168e01dd, type: 3}
-      sideHeadline: 
-      fulfillsPrompt: 0
-    - image: {fileID: 21300000, guid: e95ed986a95c00a4db10276ce956dc52, type: 3}
-      sideHeadline: Wyzkonzyn devastated by onslaught of corn!
-      fulfillsPrompt: -1
+    m_keys: 
+    m_values: []
   defaultResponse:
     image: {fileID: 0}
-    sideHeadline: ???????????
-    fulfillsPrompt: -0.3
+    sideHeadline: 
+    fulfillsPrompt: 0

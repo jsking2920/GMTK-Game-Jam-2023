@@ -13,22 +13,12 @@ MonoBehaviour:
   m_Name: 5
   m_EditorClassIdentifier: 
   sentenceToIntDict:
-    m_keys:
-    - contrarian press editor-in-chief revolution* succeeded
-    - press editor-in-chief revolution* succeeded
-    - editor-in-chief revolution* succeeded
-    - contrarian press revolution* succeeded
-    - contrarian editor-in-chief revolution* succeeded
-    - contrarian press for revolution*
-    - contrarian press editor-in-chief for revolution*
-    m_values: 00000000000000000000000000000000000000000000000000000000
+    m_keys: []
+    m_values: 
   intToResponseDict:
-    m_keys: 00000000
-    m_values:
-    - image: {fileID: 0}
-      sideHeadline: Revolution Overtakes Wyzkonzyn!
-      fulfillsPrompt: 0
+    m_keys: 
+    m_values: []
   defaultResponse:
     image: {fileID: 0}
-    sideHeadline: ???????????
-    fulfillsPrompt: -0.3
+    sideHeadline: 
+    fulfillsPrompt: 0
