@@ -22,7 +22,7 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
     public Sentence sentence;
 
     public int maxBars = 2;
-    private int curBars = 0;
+    [HideInInspector] public int curBars = 0;
     public BarsRemainingUI barsRemaingUI;
 
     [Header("Simple or complex word delineation")]
@@ -265,5 +265,32 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
         {
             barsRemaingUI.UpdateUI(maxBars - bars);
         }
+    }
+
+    public void ResetText()
+    {
+        // commas are swapped with asterisks in the csv files so replace them
+        string sentenceText = sentence.text.Replace('*', ',');
+
+        allWordsUntagged = sentenceText.Split(seperator);
+        allWordsTagged = new string[allWordsUntagged.Length];
+        allWordsUntagged.CopyTo(allWordsTagged, 0);
+
+        text.text = string.Join(joiner, allWordsTagged);
+
+        highlightedRanges.Clear();
+        dragging = false;
+
+        if (!simpleDelineation)
+        {
+            wordLengths = new int[allWordsTagged.Length];
+            for (int i = 0; i < allWordsUntagged.Length; i++)
+            {
+                wordLengths[i] = allWordsUntagged[i].Length;
+            }
+        }
+
+        SetCurBars(0);
+        SetText();
     }
 }

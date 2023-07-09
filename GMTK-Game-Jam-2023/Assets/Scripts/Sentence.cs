@@ -34,18 +34,27 @@ public class Sentence : MonoBehaviour
     private void OnEnable()
     {
         GameManager.StartNextSentence += OnStartNextSentence;
+        GameManager.ResetGame += ResetSentence;
     }
 
     private void OnDisable()
     {
         GameManager.StartNextSentence -= OnStartNextSentence;
+        GameManager.ResetGame -= ResetSentence;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) && censorableText.editable)
+        if (censorableText.editable)
         {
-            Submit();
+            if (!submitButton.interactable && censorableText.curBars == censorableText.maxBars)
+            {
+                submitButton.interactable = true;
+            }
+            else if (submitButton.interactable && censorableText.curBars != censorableText.maxBars)
+            {
+                submitButton.interactable = false;
+            }
         }
     }
 
@@ -55,15 +64,17 @@ public class Sentence : MonoBehaviour
 
         string result = censorableText.GetCurrentString();
         Response response = GameManager.Instance.sentenceDict.GetResponse(id, result);
-        
-        GameManager.Instance.SetGameState(GameState.BetweenSentences);
+  
         sentenceCam.enabled = false;
         imageCam.enabled = true;
         censorableText.editable = false;
         responseImage.sprite = response.image;
         barsRemainingUI.gameObject.SetActive(false);
+        GameManager.Instance.score += response.fulfillsPrompt;
 
         submitButton.gameObject.SetActive(false);
+
+        GameManager.Instance.SentenceSubmitted();
     }
 
     private void OnStartNextSentence(int nextId)
@@ -84,8 +95,22 @@ public class Sentence : MonoBehaviour
 
     private IEnumerator DelayActivateButton()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2.0f);
 
         submitButton.gameObject.SetActive(true);
+    }
+
+    private void ResetSentence()
+    {
+        censorableText.editable = false;
+
+        sentenceCam.enabled = false;
+        imageCam.enabled = false;
+
+        submitButton.gameObject.SetActive(false);
+
+        //responseImage.sprite = null;
+
+        censorableText.ResetText();
     }
 }

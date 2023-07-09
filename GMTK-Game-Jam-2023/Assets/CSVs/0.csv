@@ -9,7 +9,7 @@ type (0=simple 1=complex 2=bars),General Morgan’s army passes Kotka City* kill
 maxInk,General Morgan’s army passes through killed thousands with poison gas.,,,0,,,,,
 2,army passes through Kotka City*.,,,0,,,,,
 editorsPrompt,General Morgan’s army passes through Kotka City*.,,,0,,,,,
-Bad news = bad for morale! Don't let the people know.,General Morgan’s army passes. ,,,0,,,,,
+Bad news = bad for morale! Don't let the people know.,General Morgan’s army passes. ,,,1,,,,,
 ,General Morgan killed with poison gas.,,,1,,,,,
 ,Morgan’s army passes through Kotka City* killed with poison gas.,,,1,,,,,
 ,General Morgan’s army killed with poison gas.,,,1,,,,,
