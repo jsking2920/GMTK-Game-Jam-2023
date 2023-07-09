@@ -1989,6 +1989,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1008489175}
     m_Modifications:
+    - target: {fileID: 1307926725598872173, guid: 9b28ffc7e8fe3584aa8b70fcc6aa78b1,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.76574063
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307926725598872173, guid: 9b28ffc7e8fe3584aa8b70fcc6aa78b1,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307926725598872173, guid: 9b28ffc7e8fe3584aa8b70fcc6aa78b1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4706489471692237833, guid: 9b28ffc7e8fe3584aa8b70fcc6aa78b1,
         type: 3}
       propertyPath: m_Name
