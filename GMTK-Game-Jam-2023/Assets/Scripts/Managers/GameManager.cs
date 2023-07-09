@@ -49,6 +49,7 @@ public class GameManager : Singleton<GameManager>
                 currentSentence = 0;
                 titleScreenVCam.enabled = false;
                 tutorialVCam.enabled = true;
+                AudioManager.Instance.StartMusic();
             }
             else if (gameState == GameState.Tutorial)
             {
