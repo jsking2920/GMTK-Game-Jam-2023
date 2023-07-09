@@ -19,10 +19,9 @@ public class GameManager : Singleton<GameManager>
     public int CurrentSentence => currentSentence;
     private int currentSentence = 0;
 
-    //events - these can be recieved and trigger things all throughout the game
     public static event Action<int> StartNextSentence;
     public static event Action FinishSentence;
-    public static event Action ResetGame; //reset all relevant variables
+    public static event Action ResetGame;
 
     public Cinemachine.CinemachineVirtualCamera titleScreenVCam;
     public Cinemachine.CinemachineVirtualCamera tutorialVCam;
@@ -61,6 +60,7 @@ public class GameManager : Singleton<GameManager>
                     gameState = GameState.MainMenu;
                     currentSentence = 0;
                     titleScreenVCam.enabled = true;
+                    ResetGame?.Invoke();
                 }
                 else
                 {

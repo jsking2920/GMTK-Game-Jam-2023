@@ -34,11 +34,13 @@ public class Sentence : MonoBehaviour
     private void OnEnable()
     {
         GameManager.StartNextSentence += OnStartNextSentence;
+        GameManager.ResetGame += ResetSentence;
     }
 
     private void OnDisable()
     {
         GameManager.StartNextSentence -= OnStartNextSentence;
+        GameManager.ResetGame -= ResetSentence;
     }
 
     void Update()
@@ -95,5 +97,19 @@ public class Sentence : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
 
         submitButton.gameObject.SetActive(true);
+    }
+
+    private void ResetSentence()
+    {
+        censorableText.editable = false;
+
+        sentenceCam.enabled = false;
+        imageCam.enabled = false;
+
+        submitButton.gameObject.SetActive(false);
+
+        //responseImage.sprite = null;
+
+        censorableText.ResetText();
     }
 }
