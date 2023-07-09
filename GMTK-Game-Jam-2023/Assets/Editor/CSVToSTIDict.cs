@@ -90,11 +90,14 @@ public class CSVToSTIDict
                     }
 
                     response.sideHeadline = splitLine[8];
-                    Debug.Log(splitLine[8]);
 
                     response.image =
                         AssetDatabase.LoadAssetAtPath<Sprite>(
                             $"Assets/Art/ResponseImages/{sentenceID}/{responseID}.png");
+
+                    float fulfillsPrompt = -0.4f;
+                    float.TryParse(splitLine[9], out fulfillsPrompt);
+                    response.fulfillsPrompt = fulfillsPrompt;
                 }
             }
 
