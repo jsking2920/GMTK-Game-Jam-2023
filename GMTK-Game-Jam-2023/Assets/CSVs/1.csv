@@ -1,5 +1,5 @@
 Sentence ,finalSentence,indices,order,responseID,,responseID,imageDescription,sideArticleHeadline,fufillsPrompt
-Minister Louise creates new program 'Everyone Eats'* aiming to reduce hunger amongst children,Minister Louise Eats'* children,,,5,,0,Minister preaching a hunger reduction plan to a crowd + crowd rejoices,Louise's popularity rises 36%,0
+,Minister Louise Eats'* children,,,5,,0,Minister preaching a hunger reduction plan to a crowd + crowd rejoices,Louise's popularity rises 36%,0
 sentenceID ,Minister Louise creates hunger amongst children,,,1,,1,Louise laughing hysterically in front of starving children,Children across the state prepare for a coup d'état,.8
 1,Minister Louise creates new program 'Everyone Eats'* aiming to hunger children,,,1,,2,Louise overseeing a factory that is manufacturing children,Children across the state start questioning their origin,-0.5
 defaultOrder,Louise creates hunger amongst children,,,1,,3,A banquet except instead of food on the table + its children,Children across the state in panic* several primary schools band together to fight back,-0.8
@@ -14,9 +14,11 @@ Minister opposes our newspaper -> make them look bad,Louise creates,,,2,,,,,
 ,Louise creates children,,,2,,,,,
 ,New program 'Everyone Eats'* aiming to reduce hunger amongst children,,,4,,,,,
 ,New program to reduce hunger amongst children,,,4,,,,,
-,Everyone aiming to reduce hunger amongst children,,,4,,,,,
-,Everyone Eats'* Children,,,3,,,,,
+,'Everyone aiming to reduce hunger amongst children,,,4,,,,,
+,'Everyone Eats'* Children,,,3,,,,,
 ,Minister Louise creates new program 'Everyone Eats'* aiming to reduce hunger amongst children,,,0,,,,,
+,Louise reduce hunger amongst children,,,0,,,,,
+,Minister Louise reduce hunger amongst children,,,0,,,,,
 ,Minister creates new program 'Everyone Eats'* aiming to reduce hunger amongst children,,,0,,,,,
 ,Louise creates new program 'Everyone Eats'* aiming to reduce hunger amongst children,,,0,,,,,
 ,Minister Louise creates program 'Everyone Eats'* aiming to reduce hunger amongst children,,,0,,,,,
