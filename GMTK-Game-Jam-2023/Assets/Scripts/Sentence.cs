@@ -7,6 +7,7 @@ public class Sentence : MonoBehaviour
 {
     public int id = 0;
     [HideInInspector] public string text; //set from csv file
+    public bool requiresMaxBarsToBeUsed = false;
 
     private HighlightableText censorableText;
 
@@ -28,7 +29,10 @@ public class Sentence : MonoBehaviour
 
         submitButton.onClick.RemoveAllListeners();
         submitButton.onClick.AddListener(Submit);
+        submitButton.interactable = !requiresMaxBarsToBeUsed;
         submitButton.gameObject.SetActive(false);
+
+        
     }
 
     private void OnEnable()
@@ -45,7 +49,7 @@ public class Sentence : MonoBehaviour
 
     void Update()
     {
-        if (censorableText.editable)
+        if (censorableText.editable && requiresMaxBarsToBeUsed)
         {
             if (!submitButton.interactable && censorableText.curBars == censorableText.maxBars)
             {
