@@ -1,0 +1,17 @@
+Sentence ,finalSentence,indices,order,responseID,,responseID,imageDescription,sideArticleHeadline,fufillsPrompt
+Media Opinion: Contrarian Press Editor has lost his sanity? ,Media Opinion: Contrarian Press Editor has his sanity?,,,0,,0,Editor smiling w/thumbs up + giant cat/murderous orange/etc behind him (reuse parts of old pics?),Everything Is Fine!,0
+sentenceID ,Media Opinion: Contrarian Press Editor has sanity?,,,0,,,,,
+4,Opinion: Contrarian Press Editor has his sanity?,,,0,,,,,
+defaultOrder,Opinion: Contrarian Press Editor has sanity?,,,0,,,,,
+20,Media Opinion: Contrarian Editor has his sanity?,,,0,,,,,
+type (0=simple 1=complex 2=bars),Media Opinion: Contrarian Editor has sanity?,,,0,,,,,
+0,Opinion: Contrarian Editor has his sanity?,,,0,,,,,
+maxInk,Opinion: Contrarian Editor has sanity?,,,0,,,,,
+2,Media Opinion: Press Editor has his sanity?,,,0,,,,,
+editorsPrompt,Media Opinion: Press Editor has sanity?,,,0,,,,,
+The End?,Opinion: Press Editor has his sanity?,,,0,,,,,
+,Opinion: Press Editor has sanity?,,,0,,,,,
+,Media Opinion: Editor has his sanity?,,,0,,,,,
+,Media Opinion: Editor has sanity?,,,0,,,,,
+,Opinion: Editor has his sanity?,,,0,,,,,
+,Opinion: Editor has sanity?,,,0,,,,,

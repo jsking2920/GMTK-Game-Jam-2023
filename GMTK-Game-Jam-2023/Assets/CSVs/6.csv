@@ -1,0 +1,12 @@
+Sentence ,finalSentence,indices,order,responseID,,responseID,imageDescription,sideArticleHeadline,fufillsPrompt
+Media Opinion: Contrarian Press Should Not Be Trusted!,Media Opinion: Contrarian Press Should Be Trusted!,,,0,,0,Editor smiling w/thumbs up + Dictator patting them on back + maybe with medal,Contrarian Press Editor Honored For Journalistic Integrity,0
+sentenceID ,Media Opinion: Contrarian Should Be Trusted!,,,0,,,,,
+6,Media Opinion: Press Should Be Trusted!,,,0,,,,,
+defaultOrder,Opinion: Contrarian Press Should Be Trusted!,,,0,,,,,
+20,Opinion: Contrarian Should Be Trusted!,,,0,,,,,
+type (0=simple 1=complex 2=bars),Opinion: Press Should Be Trusted!,,,0,,,,,
+0,Media Should Be Trusted!,,,0,,,,,
+maxInk,Media Trusted!,,,0,,,,,
+2,Media Opinion: Should Be Trusted!,,,0,,,,,
+editorsPrompt,Press Should Be Trusted!,,,0,,,,,
+The End?,Media Press Should Be Trusted!,,,0,,,,,

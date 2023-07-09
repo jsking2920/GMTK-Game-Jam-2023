@@ -11,6 +11,10 @@ public class CSVToSTIDict
         "0",
         "1",
         "2",
+        "3",
+        "4",
+        "5",
+        "6"
 
     };
 
@@ -66,6 +70,7 @@ public class CSVToSTIDict
                 if (!int.TryParse(splitLine[4], out responseID))
                 {
                     Debug.LogWarning("Unparseable response ID: " + splitLine[4] + ". one line " + i);
+                    continue;
                 }
 
                 string sentenceToAdd = splitLine[1].ToLower();

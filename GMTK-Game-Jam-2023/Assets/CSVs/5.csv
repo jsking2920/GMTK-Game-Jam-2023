@@ -1,0 +1,12 @@
+Sentence ,finalSentence,indices,order,responseID,,responseID,imageDescription,sideArticleHeadline,fufillsPrompt
+Contrarian Press Editor-In-Chief to be executed for revolution* succeeded by junior reporter ,Contrarian Press Editor-In-Chief revolution* succeeded,,,0,,0,Editor smiling w/thumbs up + revolutionary behind him (reuse parts of old pics?),Revolution Overtakes Wyzkonzyn!,0
+sentenceID ,Press Editor-In-Chief revolution* succeeded,,,0,,,,,
+5,Editor-In-Chief revolution* succeeded,,,0,,,,,
+defaultOrder,Contrarian Press revolution* succeeded,,,0,,,,,
+20,Contrarian Editor-In-Chief revolution* succeeded,,,0,,,,,
+type (0=simple 1=complex 2=bars),Contrarian Press for revolution*,,,0,,,,,
+0,Contrarian Press Editor-In-Chief for revolution*,,,0,,,,,
+maxInk,Contrarian Press Editor-In-Chief for revolution*,,,0,,,,,
+2,,,,,,,,,
+editorsPrompt,,,,,,,,,
+The End?,,,,,,,,,

@@ -81,7 +81,7 @@ public class Sentence : MonoBehaviour
         GameManager.Instance.SentenceSubmitted();
     }
 
-    private void OnStartNextSentence(int nextId)
+    protected virtual void OnStartNextSentence(int nextId)
     {
         if (nextId == id)
         {

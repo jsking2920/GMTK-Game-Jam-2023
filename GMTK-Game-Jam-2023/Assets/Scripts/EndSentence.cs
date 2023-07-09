@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class EndSentence : Sentence
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override void OnStartNextSentence(int nextId)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (nextId == 4 || nextId == 5 || nextId == 6)
+        {
+            id = nextId;
+            text = GameManager.Instance.sentenceDict.GetStringFromID(id);
+        }
+        base.OnStartNextSentence(nextId);
     }
 }
