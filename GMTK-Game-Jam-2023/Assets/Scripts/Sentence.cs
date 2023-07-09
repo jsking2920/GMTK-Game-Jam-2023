@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using Cinemachine;
+using TMPro;
 using UnityEngine.UI;
 
 public class Sentence : MonoBehaviour
@@ -17,7 +18,7 @@ public class Sentence : MonoBehaviour
     public Image responseImage;
     public BarsRemainingUI barsRemainingUI;
     public Button submitButton;
-    private Image submitImage;
+    private TextMeshProUGUI submitText;
 
     public Subtitle subtitle;
 
@@ -30,7 +31,7 @@ public class Sentence : MonoBehaviour
         sentenceCam.enabled = false;
         imageCam.enabled = false;
 
-        submitImage = submitButton.GetComponent<Image>();
+        submitText = submitButton.GetComponentInChildren<TextMeshProUGUI>();
         submitButton.onClick.RemoveAllListeners();
         submitButton.onClick.AddListener(Submit);
         SetButtonInteractable(!requiresMaxBarsToBeUsed);
@@ -140,11 +141,11 @@ public class Sentence : MonoBehaviour
     {
         if (interactable)
         {
-            submitImage.color = Color.white;
+            submitText.color = new Color(0.1960784f, 0.1960784f, 0.1960784f);
         }
         else
         {
-            submitImage.color = new Color(0.5764706f, 0.5764706f, 0.5764706f);
+            submitText.color = new Color(0.46f, 0.46f, 0.46f);
         }
 
         submitButton.interactable = interactable;
