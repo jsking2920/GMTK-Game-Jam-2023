@@ -1,3 +1,5 @@
 #ignore all FMOD generated files
 
-/.*/
+/.cache/
+/.user/
+/.unsaved/

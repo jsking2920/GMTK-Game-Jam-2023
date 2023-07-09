@@ -99,6 +99,8 @@ Thumbs.db
 /[Aa]ssets/Plugins/FMOD/Cache.meta
 /[Aa]ssets/Plugins/FMOD/Cache/Editor.meta
 
+!/GMTK-Game-Jam-2023/FMOD/GMTK2023/Build/
+
 # Log-files
 fmod.log
 fmod_editor.log
