@@ -13,8 +13,54 @@ MonoBehaviour:
   m_Name: 2
   m_EditorClassIdentifier: 
   sentenceToIntDict:
-    m_keys: []
-    m_values: 
+    m_keys:
+    - governor assassinated after stealing hotdogs from children
+    - governor assassinated after stealing from children
+    - governor assassinated
+    - governor assassinated orange party
+    - governor blamed
+    - governor assassinated after orange party
+    - governor assassinated after stealing
+    - governor assassinated orange party blamed
+    - governor assassinated hotdogs blamed
+    - governor assassinated children blamed
+    - governor assassinated after stealing children* orange party blamed
+    - governor stealing children* orange party blamed
+    - governor assassinated orange blamed
+    - governor assassinated after stealing orange
+    - governor stealing orange
+    - governor assassinated children
+    - governor assassinated children* orange party blamed
+    - governor assassinated children* party blamed
+    m_values: 000000000000000000000000000000000000000000000000000000000100000002000000030000000400000004000000050000000600000006000000070000000700000003000000
   intToResponseDict:
-    m_keys: 
-    m_values: []
+    m_keys: 0000000001000000020000000300000004000000050000000600000007000000
+    m_values:
+    - image: {fileID: 21300000, guid: 287fad8f20592344ea7be9700898d1cd, type: 3}
+      sideHeadline: 
+      fulfillsPrompt: 0
+    - image: {fileID: 21300000, guid: d242ae6948ee1414eaccefd7e13cdd03, type: 3}
+      sideHeadline: 
+      fulfillsPrompt: 1
+    - image: {fileID: 21300000, guid: 1c3b96e3f4c2cd5438577262091ab166, type: 3}
+      sideHeadline: 
+      fulfillsPrompt: -0.8
+    - image: {fileID: 21300000, guid: 7cb1ecb28d347574b928ed727c4d76be, type: 3}
+      sideHeadline: 
+      fulfillsPrompt: 0.1
+    - image: {fileID: 21300000, guid: b7bdbc0795a1c804fbcc9d63829972ce, type: 3}
+      sideHeadline: 
+      fulfillsPrompt: 0
+    - image: {fileID: 21300000, guid: f2444854e9f59d14297128b89885f884, type: 3}
+      sideHeadline: 
+      fulfillsPrompt: -0.8
+    - image: {fileID: 21300000, guid: c2088e1149d81794f93b806d48dcf584, type: 3}
+      sideHeadline: 
+      fulfillsPrompt: 0.1
+    - image: {fileID: 21300000, guid: 1622dda8ae2b96e429185c24c8611ee3, type: 3}
+      sideHeadline: 
+      fulfillsPrompt: 0
+  defaultResponse:
+    image: {fileID: 0}
+    sideHeadline: ???????????
+    fulfillsPrompt: -0.3

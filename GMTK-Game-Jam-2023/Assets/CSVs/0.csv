@@ -1,9 +1,9 @@
 Sentence ,finalSentence,indices,order,responseID,,responseID,imageDescription,sideArticleHeadline,fufillsPrompt
-General Morgan’s army passes through Kotka City* killed thousands with poison gas,General Morgan’s army passes through City* with poison gas,,,0,,0,,Chairman Kzygryz swears vengeance* Mass drafting expected next month,
-sentenceID ,army passes through Kotka City* killed thousands,,,0,,1,,Another decisive victory under Chairman Dozyle.,
-0,General Morgan’s army killed thousands,,,0,,2,,Public calls for construction of giant laser pointer.,
-defaultOrder,army killed thousands with poison gas,,,0,,3,,"Country outraged by betrayal, thousands flee their city.",
-,Kotka City* killed with poison gas,,,0,,4,,"Streets stink for days, city facing total destruction.",
+General Morgan’s army passes through Kotka City* killed thousands with poison gas,General Morgan’s army passes through City* with poison gas,,,0,,0,,Chairman Kzygryz swears vengeance* Mass drafting expected next month,0
+sentenceID ,army passes through Kotka City* killed thousands,,,0,,1,,Another decisive victory under Chairman Dozyle.,1
+0,General Morgan’s army killed thousands,,,0,,2,,Public calls for construction of giant laser pointer.,.5
+defaultOrder,army killed thousands with poison gas,,,0,,3,,Country outraged by betrayal* thousands flee their city.,-1
+,Kotka City* killed with poison gas,,,0,,4,,Streets stink for days* city facing total destruction.,.2
 type (0=simple 1=complex 2=bars),General Morgan’s army passes Kotka City* killed thousands with gas,,,0,,,,,
 ,General Morgan’s army passes through City* killed thousands with gas,,,0,,,,,
 maxInk,General Morgan’s army passes through killed thousands with poison gas,,,0,,,,,
@@ -35,3 +35,4 @@ Bad news = bad for morale! Don't let the people know,General Morgan’s army pas
 ,General Morgan’s army passes through Kotka City* killed with poison gas,,,1,,,,,
 ,General Morgan’s army passes through Kotka City* killed thousands with gas,,,0,,,,,
 ,General Morgan’s army passes through Kotka City* killed thousands with poison,,,0,,,,,
+,General Morgan’s army passes through Kotka City* killed thousands with poison gas,,,0,,,,,

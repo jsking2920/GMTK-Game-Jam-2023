@@ -362,7 +362,7 @@ MonoBehaviour:
   sourceProjectPath: FMOD/GMTK2023/GMTK2023.fspro
   sourceBankPath: FMOD/GMTK2023/Build
   sourceBankPathUnformatted: 
-  BankRefreshCooldown: 5
+  BankRefreshCooldown: 1
   ShowBankRefreshWindow: 1
   AutomaticEventLoading: 1
   BankLoadType: 0

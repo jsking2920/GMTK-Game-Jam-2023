@@ -219,12 +219,14 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
             {
                 highlightedRanges[i] = new Vector2Int(wordIndex, highlightedRanges[i].y);
                 SetText();
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Marker");
                 return i;
             }
             else if (wordIndex == highlightedRanges[i].y + 1)
             {
                 highlightedRanges[i] = new Vector2Int(highlightedRanges[i].x, wordIndex);
                 SetText();
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Marker");
                 return i;
             }
         }
@@ -237,6 +239,7 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
         highlightedRanges.Add(r);
         SortRanges();
         SetText();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Marker");
 
         SetCurBars(curBars + 1);
 
@@ -247,6 +250,7 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
     {
         highlightedRanges.RemoveAt(index);
         SetText();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Erase");
 
         SetCurBars(curBars - 1);
     }

@@ -76,6 +76,7 @@ public class Sentence : MonoBehaviour
         barsRemainingUI.gameObject.SetActive(false);
         GameManager.Instance.score += response.fulfillsPrompt;
         if (subtitle) subtitle.WriteSubtitle(response.sideHeadline);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Submit");
         
         submitButton.gameObject.SetActive(false);
 
