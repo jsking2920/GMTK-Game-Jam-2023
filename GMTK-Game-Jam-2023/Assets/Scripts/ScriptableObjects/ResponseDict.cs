@@ -16,7 +16,7 @@ public class ResponseDict : ScriptableObject
     [SerializeField] public StringIntDictionary sentenceToIntDict = new StringIntDictionary();
     [SerializeField] public IntResponseDictionary intToResponseDict = new IntResponseDictionary();
 
-    public Response defaultResponse;
+    public Response defaultResponse = new Response();
     
     public Response StringToResponse(string input)
     {
