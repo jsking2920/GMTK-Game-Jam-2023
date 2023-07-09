@@ -91,6 +91,9 @@ public class GameManager : Singleton<GameManager>
                     }
                     Debug.Log("Going to ending " + currentSentence);
                     StartNextSentence?.Invoke(currentSentence);
+                    
+                    //hopefully this does not break anything but likely culprit
+                    currentSentence = 6;
                 }
                 else
                 {

@@ -22,6 +22,7 @@ public class SentenceDict : ScriptableObject
         Response ret = sentenceDict[id].StringToResponse(finalText.ToLower());
         if (ret == null)
         {
+            Debug.Log("Null response was returned from dict!");
             return defaultResponse;
         }
         else

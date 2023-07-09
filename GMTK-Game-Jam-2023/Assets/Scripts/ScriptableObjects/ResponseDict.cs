@@ -16,12 +16,14 @@ public class ResponseDict : ScriptableObject
     [SerializeField] public StringIntDictionary sentenceToIntDict = new StringIntDictionary();
     [SerializeField] public IntResponseDictionary intToResponseDict = new IntResponseDictionary();
 
+    public Response defaultResponse;
+    
     public Response StringToResponse(string input)
     {
         int index;
         if (!sentenceToIntDict.TryGetValue(input, out index))
         {
-            return intToResponseDict[-1];
+            return defaultResponse;
         }
         return intToResponseDict[index];
     }
