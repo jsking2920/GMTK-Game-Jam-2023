@@ -50,6 +50,7 @@ public class GameManager : Singleton<GameManager>
                 titleScreenVCam.enabled = false;
                 tutorialVCam.enabled = true;
                 AudioManager.Instance.StartMusic();
+                score = 0;
             }
             else if (gameState == GameState.Tutorial)
             {
@@ -59,12 +60,30 @@ public class GameManager : Singleton<GameManager>
             }
             else if (gameState == GameState.BetweenSentences)
             {
-                if (currentSentence >= sentenceDict.sentenceDict.Count)
+                if (currentSentence >= sentenceDict.sentenceDict.Count + 1)
                 {
                     gameState = GameState.MainMenu;
                     currentSentence = 0;
                     titleScreenVCam.enabled = true;
                     ResetGame?.Invoke();
+                }
+                else if (currentSentence > 3)
+                {
+                    //Set up ending, this is a jank way yes but sue me
+                    if (score < -0.4f)
+                    {
+                        currentSentence = 4;
+                    } 
+                    else if (score < 0.4f)
+                    {
+                        currentSentence = 5;
+                    }
+                    else
+                    {
+                        currentSentence = 6;
+                    }
+                    Debug.Log("Going to ending " + currentSentence);
+                    StartNextSentence?.Invoke(currentSentence);
                 }
                 else
                 {

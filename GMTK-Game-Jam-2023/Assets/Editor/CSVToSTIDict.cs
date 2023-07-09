@@ -95,7 +95,7 @@ public class CSVToSTIDict
                         AssetDatabase.LoadAssetAtPath<Sprite>(
                             $"Assets/Art/ResponseImages/{sentenceID}/{responseID}.png");
 
-                    float fulfillsPrompt = -0.4f;
+                    float fulfillsPrompt = -0.3f;
                     float.TryParse(splitLine[9], out fulfillsPrompt);
                     response.fulfillsPrompt = fulfillsPrompt;
                 }
