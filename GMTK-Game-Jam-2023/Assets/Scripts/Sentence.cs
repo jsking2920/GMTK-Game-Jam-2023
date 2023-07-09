@@ -43,9 +43,16 @@ public class Sentence : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) && censorableText.editable)
+        if (censorableText.editable)
         {
-            Submit();
+            if (!submitButton.interactable && censorableText.curBars == censorableText.maxBars)
+            {
+                submitButton.interactable = true;
+            }
+            else if (submitButton.interactable && censorableText.curBars != censorableText.maxBars)
+            {
+                submitButton.interactable = false;
+            }
         }
     }
 

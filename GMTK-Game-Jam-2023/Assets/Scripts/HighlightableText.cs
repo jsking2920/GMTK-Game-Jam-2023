@@ -22,7 +22,7 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
     public Sentence sentence;
 
     public int maxBars = 2;
-    private int curBars = 0;
+    [HideInInspector] public int curBars = 0;
     public BarsRemainingUI barsRemaingUI;
 
     [Header("Simple or complex word delineation")]
