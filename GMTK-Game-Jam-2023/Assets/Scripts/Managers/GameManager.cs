@@ -73,8 +73,7 @@ public class GameManager : Singleton<GameManager>
                     currentSentence = 0;
                     titleScreenVCam.enabled = true;
                     ResetGame?.Invoke();
-                } else if(currentSentence )
-                else if (currentSentence > 3)
+                } else if (currentSentence > 3)
                 {
                     gameState = GameState.Playing;
                     Debug.Log(score);
