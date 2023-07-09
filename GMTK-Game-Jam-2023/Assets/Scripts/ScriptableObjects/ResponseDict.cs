@@ -21,7 +21,7 @@ public class ResponseDict : ScriptableObject
         int index;
         if (!sentenceToIntDict.TryGetValue(input, out index))
         {
-            return null;
+            return intToResponseDict[-1];
         }
         return intToResponseDict[index];
     }
