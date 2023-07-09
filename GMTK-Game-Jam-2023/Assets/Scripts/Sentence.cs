@@ -17,6 +17,7 @@ public class Sentence : MonoBehaviour
     public Image responseImage;
     public BarsRemainingUI barsRemainingUI;
     public Button submitButton;
+    private Image submitImage;
 
     public Subtitle subtitle;
 
@@ -29,9 +30,10 @@ public class Sentence : MonoBehaviour
         sentenceCam.enabled = false;
         imageCam.enabled = false;
 
+        submitImage = submitButton.GetComponent<Image>();
         submitButton.onClick.RemoveAllListeners();
         submitButton.onClick.AddListener(Submit);
-        submitButton.interactable = !requiresMaxBarsToBeUsed;
+        SetButtonInteractable(!requiresMaxBarsToBeUsed);
         submitButton.gameObject.SetActive(false);
     }
 
@@ -53,11 +55,11 @@ public class Sentence : MonoBehaviour
         {
             if (!submitButton.interactable && censorableText.curBars == censorableText.maxBars)
             {
-                submitButton.interactable = true;
+                SetButtonInteractable(true);
             }
             else if (submitButton.interactable && censorableText.curBars != censorableText.maxBars)
             {
-                submitButton.interactable = false;
+                SetButtonInteractable(false);
             }
         }
     }
@@ -126,11 +128,25 @@ public class Sentence : MonoBehaviour
         Response response = GameManager.Instance.sentenceDict.GetResponse(id, result);
         if (response.image == null) //jank check for default response
         {
-            submitButton.enabled = false;
+            SetButtonInteractable(false);
         }
         else
         {
-            submitButton.enabled = true;
+            SetButtonInteractable(true);
         }
+    }
+
+    private void SetButtonInteractable(bool interactable)
+    {
+        if (interactable)
+        {
+            submitImage.color = Color.white;
+        }
+        else
+        {
+            submitImage.color = new Color(0.5764706f, 0.5764706f, 0.5764706f);
+        }
+
+        submitButton.interactable = interactable;
     }
 }
