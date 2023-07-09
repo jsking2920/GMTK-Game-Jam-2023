@@ -72,12 +72,12 @@ MonoBehaviour:
       sideHeadline: Public calls for construction of giant laser pointer.
       fulfillsPrompt: 0
     - image: {fileID: 21300000, guid: 3cf81be3277f0dc409870ac089e9bddd, type: 3}
-      sideHeadline: '"Country outraged by betrayal'
+      sideHeadline: Country outraged by betrayal
       fulfillsPrompt: 0
     - image: {fileID: 21300000, guid: 4accbe38b38cc8249aee0fc50312ddad, type: 3}
-      sideHeadline: '"Streets stink for days'
+      sideHeadline: Streets stink for days
       fulfillsPrompt: 0
   defaultResponse:
-    image: {fileID: 21300000, guid: 22d72c1623d63fd4394d9b6a1fd8225a, type: 3}
+    image: {fileID: 21300000, guid: 595f4fa5c705c4444a50e4e6c8cc8806, type: 3}
     sideHeadline: 
     fulfillsPrompt: 0

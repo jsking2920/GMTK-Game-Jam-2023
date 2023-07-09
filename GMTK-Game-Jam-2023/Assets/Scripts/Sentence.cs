@@ -33,8 +33,6 @@ public class Sentence : MonoBehaviour
         submitButton.onClick.AddListener(Submit);
         submitButton.interactable = !requiresMaxBarsToBeUsed;
         submitButton.gameObject.SetActive(false);
-
-        
     }
 
     private void OnEnable()
@@ -118,5 +116,6 @@ public class Sentence : MonoBehaviour
 
         //responseImage.sprite = null;
         //censorableText.ResetText();
+        //subtitle.Clear();
     }
 }
