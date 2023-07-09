@@ -32,6 +32,10 @@ public class Subtitle : MonoBehaviour
         StringBuilder currentString = new StringBuilder();
         for (int i = 0; i < final.Length; i++)
         {
+            if (final[i] != ' ')
+            {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Mouseover");
+            }
             if (final[i] == '*')
             {
                 tmpro.text += ',';

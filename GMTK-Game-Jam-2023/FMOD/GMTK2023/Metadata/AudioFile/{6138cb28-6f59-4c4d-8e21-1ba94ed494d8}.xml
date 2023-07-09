@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{6138cb28-6f59-4c4d-8e21-1ba94ed494d8}">
+		<property name="assetPath">
+			<value>Marker01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.25</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{86653359-5f06-488c-b177-cb9968200d5c}</destination>
+		</relationship>
+	</object>
+</objects>
