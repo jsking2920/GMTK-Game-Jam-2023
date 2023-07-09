@@ -18,6 +18,8 @@ public class Sentence : MonoBehaviour
     public BarsRemainingUI barsRemainingUI;
     public Button submitButton;
 
+    public Subtitle subtitle;
+
     private void Awake()
     {
         text = GameManager.Instance.sentenceDict.GetStringFromID(id);
@@ -75,7 +77,8 @@ public class Sentence : MonoBehaviour
         responseImage.sprite = response.image;
         barsRemainingUI.gameObject.SetActive(false);
         GameManager.Instance.score += response.fulfillsPrompt;
-
+        subtitle.WriteSubtitle(response.sideHeadline);
+        
         submitButton.gameObject.SetActive(false);
 
         GameManager.Instance.SentenceSubmitted();

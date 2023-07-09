@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1468,6 +1468,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1100475344 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8799414184524230203, guid: 9b28ffc7e8fe3584aa8b70fcc6aa78b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1882263232}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 877b1eb58f42a40208399bc389b99ceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1283944144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,12 +2425,12 @@ PrefabInstance:
         type: 3}
       propertyPath: sentence
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1882263240}
     - target: {fileID: 5988370094222798629, guid: 9b28ffc7e8fe3584aa8b70fcc6aa78b1,
         type: 3}
       propertyPath: barsRemaingUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1882263238}
     - target: {fileID: 6709354361639009553, guid: 9b28ffc7e8fe3584aa8b70fcc6aa78b1,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -2656,6 +2668,7 @@ MonoBehaviour:
   responseImage: {fileID: 1882263237}
   barsRemainingUI: {fileID: 1882263238}
   submitButton: {fileID: 1882263234}
+  subtitle: {fileID: 1100475344}
 --- !u!1 &2087931797
 GameObject:
   m_ObjectHideFlags: 3
