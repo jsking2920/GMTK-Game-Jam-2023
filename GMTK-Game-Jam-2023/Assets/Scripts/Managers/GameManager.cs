@@ -16,6 +16,8 @@ public class GameManager : Singleton<GameManager>
 
     public GameState gameState;
 
+    public float score;
+    
     public int CurrentSentence => currentSentence;
     private int currentSentence = 0;
 

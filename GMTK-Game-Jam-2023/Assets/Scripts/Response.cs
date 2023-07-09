@@ -11,4 +11,6 @@ public class Response
     
     //add stats etc in here
     public string sideHeadline;
+
+    public float fulfillsPrompt;
 }

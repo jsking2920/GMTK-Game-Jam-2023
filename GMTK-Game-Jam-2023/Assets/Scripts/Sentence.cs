@@ -70,6 +70,7 @@ public class Sentence : MonoBehaviour
         censorableText.editable = false;
         responseImage.sprite = response.image;
         barsRemainingUI.gameObject.SetActive(false);
+        GameManager.Instance.score += response.fulfillsPrompt;
 
         submitButton.gameObject.SetActive(false);
 
