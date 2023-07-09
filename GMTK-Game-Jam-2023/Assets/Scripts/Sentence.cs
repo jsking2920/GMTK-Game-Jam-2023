@@ -15,6 +15,7 @@ public class Sentence : MonoBehaviour
 
     public Image responseImage;
     public BarsRemainingUI barsRemainingUI;
+    public Button submitButton;
 
     private void Awake()
     {
@@ -24,6 +25,10 @@ public class Sentence : MonoBehaviour
 
         sentenceCam.enabled = false;
         imageCam.enabled = false;
+
+        submitButton.onClick.RemoveAllListeners();
+        submitButton.onClick.AddListener(Submit);
+        submitButton.gameObject.SetActive(false);
     }
 
     private void OnEnable()
@@ -46,6 +51,8 @@ public class Sentence : MonoBehaviour
 
     public void Submit()
     {
+        if (!censorableText.editable) return;
+
         string result = censorableText.GetCurrentString();
         Response response = GameManager.Instance.sentenceDict.GetResponse(id, result);
         
@@ -55,6 +62,8 @@ public class Sentence : MonoBehaviour
         censorableText.editable = false;
         responseImage.sprite = response.image;
         barsRemainingUI.gameObject.SetActive(false);
+
+        submitButton.gameObject.SetActive(false);
     }
 
     private void OnStartNextSentence(int nextId)
@@ -63,11 +72,20 @@ public class Sentence : MonoBehaviour
         {
             sentenceCam.enabled = true;
             censorableText.editable = true;
+            StartCoroutine(DelayActivateButton());
         }
         else
         {
             censorableText.editable = false;
             imageCam.enabled = false;
+            submitButton.gameObject.SetActive(false);
         }
+    }
+
+    private IEnumerator DelayActivateButton()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        submitButton.gameObject.SetActive(true);
     }
 }
