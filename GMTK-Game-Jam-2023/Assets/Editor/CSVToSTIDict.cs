@@ -61,6 +61,11 @@ public class CSVToSTIDict
             sentenceDict.sentenceDict.Add(sentenceID, newDict);
             sentenceDict.idToSentenceDict.Add(sentenceID, sentence);
             
+            newDict.defaultResponse.image = AssetDatabase.LoadAssetAtPath<Sprite>(
+                $"Assets/Art/DefaultImages/{sentenceID}.png");
+            newDict.defaultResponse.sideHeadline = "?????????";
+            newDict.defaultResponse.fulfillsPrompt = -0.3f;
+            
             for (int i = 1; i < allLines.Length; i++)
             {
                 //add sentence/response ID pair
