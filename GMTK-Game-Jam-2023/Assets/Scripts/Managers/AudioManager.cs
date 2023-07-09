@@ -10,7 +10,7 @@ public class AudioManager : Singleton<AudioManager>
     // Start is called before the first frame update
     void Start()
     {
-        music = FMODUnity.RuntimeManager.CreateInstance("event:/Music");
+        music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Music");
         music.start();
     }
 
@@ -18,6 +18,15 @@ public class AudioManager : Singleton<AudioManager>
     {
         GameManager.ResetGame += ResetMusic;
         GameManager.StartNextSentence += OnStartNextSentence;
+    }
+
+    private void Update()
+    {
+        // if (!music.isValid())
+        // {
+        //     music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Music");
+        //     music.start();
+        // }
     }
 
     private void OnStartNextSentence(int sentence)

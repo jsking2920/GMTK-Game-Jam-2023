@@ -27,7 +27,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-5294089825676277352
+--- !u!114 &-7173080300368289046
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -51,6 +51,35 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-5069917771180013528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Music
+  Guid:
+    Data1: -1504277003
+    Data2: 1165799546
+    Data3: 1189619897
+    Data4: 1265981441
+  Banks:
+  - {fileID: 2841870671122792425}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1202040214241410072}
+  - {fileID: -7173080300368289046}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 193342
 --- !u!114 &-3691700752105368464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,35 +107,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-3611675768144390729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music
-  m_EditorClassIdentifier: 
-  Path: event:/Music
-  Guid:
-    Data1: -1504277003
-    Data2: 1165799546
-    Data3: 1189619897
-    Data4: 1265981441
-  Banks:
-  - {fileID: 2841870671122792425}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 6871077976803991366}
-  - {fileID: -5294089825676277352}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 193342
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,18 +123,42 @@ MonoBehaviour:
   - {fileID: 7891268516213654348}
   - {fileID: 2841870671122792425}
   EditorEvents:
-  - {fileID: -3611675768144390729}
   - {fileID: -3691700752105368464}
   - {fileID: 3225584361142659596}
   - {fileID: 4834788763637993642}
   - {fileID: -8372640359137750175}
+  - {fileID: -5069917771180013528}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2841870671122792425}
   StringsBanks:
   - {fileID: 7891268516213654348}
-  cacheTime: 638244990973126810
+  cacheTime: 638245058162062068
   cacheVersion: 131605
+--- !u!114 &1202040214241410072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Started
+  m_EditorClassIdentifier: 
+  Name: Started
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1580856564
+    data2: 3235999839
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &2841870671122792425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +174,7 @@ MonoBehaviour:
   Path: FMOD/GMTK2023/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638244990973117989
+  lastModified: 638245058162045287
   FileSizes:
   - Name: Desktop
     Value: 9540064
@@ -209,30 +233,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &6871077976803991366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music/Started
-  m_EditorClassIdentifier: 
-  Name: Started
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1580856564
-    data2: 3235999839
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &7891268516213654348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,8 +248,8 @@ MonoBehaviour:
   Path: FMOD/GMTK2023/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638244990973126810
+  lastModified: 638245058162062068
   FileSizes:
   - Name: Desktop
-    Value: 1044
+    Value: 1050
   Exists: 1

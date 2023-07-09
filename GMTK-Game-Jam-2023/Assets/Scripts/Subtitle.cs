@@ -19,7 +19,7 @@ public class Subtitle : MonoBehaviour
     public void Clear()
     {
         StopAllCoroutines();
-        tmpro.text = "";
+        if(tmpro) tmpro.text = "";
     }
 
     public void WriteSubtitle(string subtitle)
