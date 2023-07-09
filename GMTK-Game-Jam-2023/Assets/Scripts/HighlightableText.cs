@@ -287,6 +287,7 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
         }
     }
 
+    /*
     public void ResetText()
     {
         // commas are swapped with asterisks in the csv files so replace them
@@ -313,4 +314,5 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
         SetCurBars(0);
         SetText();
     }
+    */
 }

@@ -110,7 +110,6 @@ public class Sentence : MonoBehaviour
         submitButton.gameObject.SetActive(false);
 
         //responseImage.sprite = null;
-
-        censorableText.ResetText();
+        //censorableText.ResetText();
     }
 }
