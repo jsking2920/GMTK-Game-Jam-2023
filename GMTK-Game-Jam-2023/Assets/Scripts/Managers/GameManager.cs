@@ -17,7 +17,6 @@ public class GameManager : Singleton<GameManager>
     public GameState gameState;
 
     public float score;
-    
     public int CurrentSentence => currentSentence;
     private int currentSentence = 0;
 
@@ -27,6 +26,8 @@ public class GameManager : Singleton<GameManager>
 
     public Cinemachine.CinemachineVirtualCamera titleScreenVCam;
     public Cinemachine.CinemachineVirtualCamera tutorialVCam;
+
+    public Texture2D penTex;
 
     public override void Awake()
     {
@@ -77,5 +78,6 @@ public class GameManager : Singleton<GameManager>
     {
         gameState = GameState.BetweenSentences;
         currentSentence++;
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 }

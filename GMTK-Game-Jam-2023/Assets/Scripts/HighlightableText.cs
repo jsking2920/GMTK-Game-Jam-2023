@@ -35,6 +35,8 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
 
     public bool editable = false;
 
+    private bool penCursor = false;
+
     private void Start()
     {
         mainCam = Camera.main;
@@ -62,6 +64,24 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
         }
 
         SetCurBars(0);
+    }
+
+    private void Update()
+    {
+        if (!editable) return;
+
+        int index = GetWordIndex(Input.mousePosition, mainCam);
+
+        if (index == -1 && penCursor)
+        {
+            penCursor = false;
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        }
+        else if (index != -1 && !penCursor)
+        {
+            penCursor = true;
+            Cursor.SetCursor(GameManager.Instance.penTex, Vector2.zero, CursorMode.Auto);
+        }
     }
 
     public void OnPointerClick(PointerEventData pointerEventData)
