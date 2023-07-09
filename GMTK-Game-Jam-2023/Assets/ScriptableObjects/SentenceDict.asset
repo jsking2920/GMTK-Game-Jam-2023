@@ -13,9 +13,30 @@ MonoBehaviour:
   m_Name: SentenceDict
   m_EditorClassIdentifier: 
   sentenceDict:
-    m_keys: 00000000
+    m_keys: 00000000010000000200000003000000040000000500000006000000
     m_values:
     - {fileID: 11400000, guid: df61523999d9949d6973003fafbf5329, type: 2}
+    - {fileID: 11400000, guid: 2e396e90714844729ace2310a4c7c868, type: 2}
+    - {fileID: 11400000, guid: 5d4b0e57eca1f42b091e55240a298f4d, type: 2}
+    - {fileID: 11400000, guid: a42bfca95e7514e7aae210e2d1e8fd86, type: 2}
+    - {fileID: 11400000, guid: 15fc44a8790a6461593505bc2345dd5e, type: 2}
+    - {fileID: 11400000, guid: 75cc0b48b8978485a9821fdc653e4652, type: 2}
+    - {fileID: 11400000, guid: b72ed18f22f6742cc9000a20d7db3d63, type: 2}
+  idToSentenceDict:
+    m_keys: 00000000010000000200000003000000040000000500000006000000
+    m_values:
+    - "General Morgan\u2019s army passes through Kotka City* killed thousands with
+      poison gas"
+    - Minister Louise creates new program 'Everyone Eats'* aiming to reduce hunger
+      amongst children
+    - Governor Assassinated After Stealing Hotdogs From Children* Orange Party Blamed
+    - 'Scientists are Growing Concerned: Bird Population Cut in Half* Geese Migrations
+      Reveal Pesticides Likely at Fault'
+    - 'Media Opinion: Contrarian Press Editor has lost his sanity? '
+    - 'Contrarian Press Editor-In-Chief to be executed for revolution* succeeded
+      by junior reporter '
+    - 'Media Opinion: Contrarian Press Should Not Be Trusted!'
   defaultResponse:
     image: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     sideHeadline: Illustrator Quits Job
+    fulfillsPrompt: 0
