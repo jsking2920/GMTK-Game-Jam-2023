@@ -9,9 +9,17 @@ public class Subtitle : MonoBehaviour
 {
     private TextMeshProUGUI tmpro;
     public float TimeBetweenLetters = 0.05f;
+
     private void Start()
     {
         tmpro = GetComponent<TextMeshProUGUI>();
+        Clear();
+    }
+
+    public void Clear()
+    {
+        StopAllCoroutines();
+        tmpro.text = "";
     }
 
     public void WriteSubtitle(string subtitle)
