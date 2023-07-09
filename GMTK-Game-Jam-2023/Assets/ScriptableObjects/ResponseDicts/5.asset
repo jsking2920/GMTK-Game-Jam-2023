@@ -18,3 +18,7 @@ MonoBehaviour:
   intToResponseDict:
     m_keys: 
     m_values: []
+  defaultResponse:
+    image: {fileID: 0}
+    sideHeadline: 
+    fulfillsPrompt: 0

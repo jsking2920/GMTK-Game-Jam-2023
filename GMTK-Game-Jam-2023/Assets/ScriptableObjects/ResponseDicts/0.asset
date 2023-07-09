@@ -13,71 +13,12 @@ MonoBehaviour:
   m_Name: 0
   m_EditorClassIdentifier: 
   sentenceToIntDict:
-    m_keys:
-    - "general morgan\u2019s army passes through city* with poison gas"
-    - army passes through kotka city* killed thousands
-    - "general morgan\u2019s army killed thousands"
-    - army killed thousands with poison gas
-    - kotka city* killed with poison gas
-    - "general morgan\u2019s army passes kotka city* killed thousands with gas"
-    - "general morgan\u2019s army passes through city* killed thousands with gas"
-    - "general morgan\u2019s army passes through killed thousands with poison gas"
-    - army passes through kotka city*
-    - "general morgan\u2019s army passes through kotka city*"
-    - "general morgan\u2019s army passes"
-    - general morgan killed with poison gas
-    - "morgan\u2019s army passes through kotka city* killed with poison gas"
-    - "general morgan\u2019s army killed with poison gas"
-    - "general morgan\u2019s army passes through killed with poison gas"
-    - "general morgan\u2019s army passes with poison gas"
-    - general kotka killed thousands with poison gas
-    - kotka killed thousands with poison gas
-    - city* killed thousands with poison gas
-    - kotka city* killed thousands with poison gas
-    - "general morgan\u2019s army passes gas"
-    - army passes gas
-    - "general morgan\u2019s passes gas"
-    - general passes gas
-    - "general morgan\u2019s passes through gas"
-    - general passes through gas
-    - army passes through gas
-    - "morgan\u2019s army passes through kotka city* killed thousands with poison
-      gas"
-    - general army passes through kotka city* killed thousands with poison gas
-    - "general morgan\u2019s passes through kotka city* killed thousands with poison
-      gas"
-    - "general morgan\u2019s army through kotka city* killed thousands with poison
-      gas"
-    - "general morgan\u2019s army passes kotka city* killed thousands with poison
-      gas"
-    - "general morgan\u2019s army passes through kotka killed thousands with poison
-      gas"
-    - "general morgan\u2019s army passes through kotka city* killed with poison gas"
-    - "general morgan\u2019s army passes through kotka city* killed thousands with
-      gas"
-    - "general morgan\u2019s army passes through kotka city* killed thousands with
-      poison"
-    m_values: 000000000000000000000000000000000000000000000000000000000000000000000000000000000100000001000000010000000100000001000000010000000200000002000000030000000300000004000000040000000400000004000000040000000400000004000000000000000000000000000000000000000000000000000000010000000000000000000000
+    m_keys: []
+    m_values: 
   intToResponseDict:
-    m_keys: 0000000001000000020000000300000004000000
-    m_values:
-    - image: {fileID: 21300000, guid: 58b585951d808224a9c808f506bc95be, type: 3}
-      sideHeadline: Chairman Kzygryz swears vengeance* Mass drafting expected next
-        month
-      fulfillsPrompt: 0
-    - image: {fileID: 21300000, guid: 13f3babbfeb128c41a165350a8f351c9, type: 3}
-      sideHeadline: Another decisive victory under Chairman Dozyle.
-      fulfillsPrompt: 0
-    - image: {fileID: 21300000, guid: 3c4e68239a6bf0f4f85a1d7a83dd9d13, type: 3}
-      sideHeadline: Public calls for construction of giant laser pointer.
-      fulfillsPrompt: 0
-    - image: {fileID: 21300000, guid: 3cf81be3277f0dc409870ac089e9bddd, type: 3}
-      sideHeadline: Country outraged by betrayal
-      fulfillsPrompt: 0
-    - image: {fileID: 21300000, guid: 4accbe38b38cc8249aee0fc50312ddad, type: 3}
-      sideHeadline: Streets stink for days
-      fulfillsPrompt: 0
+    m_keys: 
+    m_values: []
   defaultResponse:
-    image: {fileID: 21300000, guid: 595f4fa5c705c4444a50e4e6c8cc8806, type: 3}
+    image: {fileID: 0}
     sideHeadline: 
     fulfillsPrompt: 0
