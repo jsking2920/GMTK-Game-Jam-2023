@@ -13,12 +13,58 @@ MonoBehaviour:
   m_Name: 1
   m_EditorClassIdentifier: 
   sentenceToIntDict:
-    m_keys: []
-    m_values: 
+    m_keys:
+    - minister louise eats"* children"
+    - minister louise creates hunger amongst children
+    - minister louise creates new program "everyone eats"* aiming to hunger children"
+    - louise creates hunger amongst children
+    - minister louise aiming to reduce children
+    - minister louise creates hunger
+    - minister louise creates children
+    - minister louise creates new children
+    - minister louise creates "everyone"
+    - minister louise creates
+    - louise creates
+    - louise creates new children
+    - louise creates children
+    - '"new program "everyone eats"* aiming to reduce hunger amongst children"'
+    - new program to reduce hunger amongst children
+    - everyone aiming to reduce hunger amongst children
+    - '"everyone eats"* children"'
+    - minister louise creates new program "everyone eats"* aiming to reduce hunger
+      amongst children"
+    - minister creates new program "everyone eats"* aiming to reduce hunger amongst
+      children"
+    - '"louise creates new program "everyone eats"* aiming to reduce hunger amongst
+      children"'
+    - minister louise creates program "everyone eats"* aiming to reduce hunger amongst
+      children"
+    - minister louise creates new program "everyone eats"* to reduce hunger amongst
+      children"
+    m_values: 05000000010000000100000001000000010000000100000002000000020000000200000002000000000000000200000002000000040000000400000004000000030000000000000000000000000000000000000000000000
   intToResponseDict:
-    m_keys: 
-    m_values: []
+    m_keys: 000000000100000002000000030000000400000005000000
+    m_values:
+    - image: {fileID: 21300000, guid: 6e6c7ab821e31eb4aa75403b0d2f6c9e, type: 3}
+      sideHeadline: Louise's popularity rises 36%
+      fulfillsPrompt: 0
+    - image: {fileID: 21300000, guid: c1e091369ef7cc04a90e34e1736cc921, type: 3}
+      sideHeadline: "Children across the state prepare for a coup d'\xE9tat"
+      fulfillsPrompt: 0.8
+    - image: {fileID: 21300000, guid: d2184847f71e2814bb1e0c0b0772c84e, type: 3}
+      sideHeadline: Children across the state start questioning their origin
+      fulfillsPrompt: -0.5
+    - image: {fileID: 21300000, guid: 6dfb3c7a060df7f4d8d2307f7c64b82a, type: 3}
+      sideHeadline: Children across the state in panic* several primary schools band
+        together to fight back
+      fulfillsPrompt: -0.8
+    - image: {fileID: 21300000, guid: 12ff55f425b67b741b2abd5378958aa6, type: 3}
+      sideHeadline: Citizens across the state celebrate
+      fulfillsPrompt: 0
+    - image: {fileID: 21300000, guid: 12e7df15b5dd046ad80e37866b6cb0f4, type: 3}
+      sideHeadline: Citizens disgusted* Children advisted to stay at home
+      fulfillsPrompt: 1
   defaultResponse:
-    image: {fileID: 0}
-    sideHeadline: 
-    fulfillsPrompt: 0
+    image: {fileID: 21300000, guid: 22d72c1623d63fd4394d9b6a1fd8225a, type: 3}
+    sideHeadline: ???????????
+    fulfillsPrompt: -0.3

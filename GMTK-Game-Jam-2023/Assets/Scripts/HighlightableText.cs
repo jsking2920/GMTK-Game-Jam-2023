@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
@@ -329,5 +330,14 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
          SetCurBars(0);
          SetText();
      }
+
+     private void OnEnable()
+     {
+         GameManager.ResetGame += ResetText;
+     }
      
+     private void OnDisable()
+     {
+         GameManager.ResetGame -= ResetText;
+     }
 }

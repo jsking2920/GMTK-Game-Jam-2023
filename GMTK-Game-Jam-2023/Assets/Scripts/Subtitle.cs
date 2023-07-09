@@ -24,6 +24,7 @@ public class Subtitle : MonoBehaviour
 
     public void WriteSubtitle(string subtitle)
     {
+        Clear();
         StartCoroutine(TypeOutText(subtitle));
     }
 

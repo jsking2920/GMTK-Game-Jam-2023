@@ -67,13 +67,13 @@ public class GameManager : Singleton<GameManager>
             }
             else if (gameState == GameState.BetweenSentences)
             {
-                if (currentSentence >= sentenceDict.sentenceDict.Count + 1)
+                if (currentSentence >= 8)
                 {
                     gameState = GameState.MainMenu;
                     currentSentence = 0;
                     titleScreenVCam.enabled = true;
                     ResetGame?.Invoke();
-                }
+                } else if(currentSentence )
                 else if (currentSentence > 3)
                 {
                     gameState = GameState.Playing;
