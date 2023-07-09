@@ -120,7 +120,7 @@ public class Sentence : MonoBehaviour
 
         //responseImage.sprite = null;
         //censorableText.ResetText();
-        //subtitle.Clear();
+        subtitle.Clear();
     }
 
     public virtual void UpdateSubmittable()
