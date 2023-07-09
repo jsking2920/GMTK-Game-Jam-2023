@@ -10,8 +10,10 @@ public class AudioManager : Singleton<AudioManager>
     // Start is called before the first frame update
     void Start()
     {
-        music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Music");
-        music.start();
+        StartCoroutine(Delay());
+        // music = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Marker");
+        // music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Music");
+        // music.start();
     }
 
     private void OnEnable()
@@ -43,6 +45,11 @@ public class AudioManager : Singleton<AudioManager>
 
     public void StartMusic()
     {
+        if (!music.isValid())
+        {
+            music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Music");
+            music.start();
+        }
         music.setParameterByName("Started", 1);
         music.setParameterByName("Intensity", 0);
     }
@@ -51,5 +58,15 @@ public class AudioManager : Singleton<AudioManager>
     {
         music.setParameterByName("Started", 0);
         music.setParameterByName("Intensity", 0);
+    }
+
+    public IEnumerator Delay()
+    {
+        yield return null;
+        yield return null;
+        yield return null;
+        yield return new WaitForEndOfFrame();
+        music = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Mouseover");
+        music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Music");
     }
 }
