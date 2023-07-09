@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using Cinemachine;
+using TMPro;
 using UnityEngine.UI;
 
 public class Sentence : MonoBehaviour
@@ -17,6 +18,7 @@ public class Sentence : MonoBehaviour
     public Image responseImage;
     public BarsRemainingUI barsRemainingUI;
     public Button submitButton;
+    private TextMeshProUGUI submitText;
 
     public Subtitle subtitle;
 
@@ -29,9 +31,10 @@ public class Sentence : MonoBehaviour
         sentenceCam.enabled = false;
         imageCam.enabled = false;
 
+        submitText = submitButton.GetComponentInChildren<TextMeshProUGUI>();
         submitButton.onClick.RemoveAllListeners();
         submitButton.onClick.AddListener(Submit);
-        submitButton.interactable = !requiresMaxBarsToBeUsed;
+        SetButtonInteractable(!requiresMaxBarsToBeUsed);
         submitButton.gameObject.SetActive(false);
     }
 
@@ -53,11 +56,11 @@ public class Sentence : MonoBehaviour
         {
             if (!submitButton.interactable && censorableText.curBars == censorableText.maxBars)
             {
-                submitButton.interactable = true;
+                SetButtonInteractable(true);
             }
             else if (submitButton.interactable && censorableText.curBars != censorableText.maxBars)
             {
-                submitButton.interactable = false;
+                SetButtonInteractable(false);
             }
         }
     }
@@ -126,11 +129,25 @@ public class Sentence : MonoBehaviour
         Response response = GameManager.Instance.sentenceDict.GetResponse(id, result);
         if (response.image == null) //jank check for default response
         {
-            submitButton.enabled = false;
+            SetButtonInteractable(false);
         }
         else
         {
-            submitButton.enabled = true;
+            SetButtonInteractable(true);
         }
+    }
+
+    private void SetButtonInteractable(bool interactable)
+    {
+        if (interactable)
+        {
+            submitText.color = new Color(0.1960784f, 0.1960784f, 0.1960784f);
+        }
+        else
+        {
+            submitText.color = new Color(0.46f, 0.46f, 0.46f);
+        }
+
+        submitButton.interactable = interactable;
     }
 }

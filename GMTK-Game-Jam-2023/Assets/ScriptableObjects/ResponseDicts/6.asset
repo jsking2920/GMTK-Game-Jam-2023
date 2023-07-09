@@ -13,26 +13,12 @@ MonoBehaviour:
   m_Name: 6
   m_EditorClassIdentifier: 
   sentenceToIntDict:
-    m_keys:
-    - 'media opinion: contrarian press should be trusted!'
-    - 'media opinion: contrarian should be trusted!'
-    - 'media opinion: press should be trusted!'
-    - 'opinion: contrarian press should be trusted!'
-    - 'opinion: contrarian should be trusted!'
-    - 'opinion: press should be trusted!'
-    - media should be trusted!
-    - media trusted!
-    - 'media opinion: should be trusted!'
-    - press should be trusted!
-    - media press should be trusted!
-    m_values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    m_keys: []
+    m_values: 
   intToResponseDict:
-    m_keys: 00000000
-    m_values:
-    - image: {fileID: 0}
-      sideHeadline: Contrarian Press Editor Honored For Journalistic Integrity
-      fulfillsPrompt: 0
+    m_keys: 
+    m_values: []
   defaultResponse:
     image: {fileID: 0}
-    sideHeadline: ?????????
-    fulfillsPrompt: -0.3
+    sideHeadline: 
+    fulfillsPrompt: 0
