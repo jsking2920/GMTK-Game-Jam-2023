@@ -75,12 +75,12 @@ public class HighlightableText : MonoBehaviour, IPointerClickHandler, IBeginDrag
         if (index == -1 && penCursor)
         {
             penCursor = false;
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            Cursor.SetCursor(null, Vector2.zero, GameManager.Instance.cursorMode);
         }
         else if (index != -1 && !penCursor)
         {
             penCursor = true;
-            Cursor.SetCursor(GameManager.Instance.penTex, Vector2.zero, CursorMode.Auto);
+            Cursor.SetCursor(GameManager.Instance.penTex, Vector2.zero, GameManager.Instance.cursorMode);
         }
     }
 

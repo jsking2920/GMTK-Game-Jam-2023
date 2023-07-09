@@ -28,6 +28,7 @@ public class GameManager : Singleton<GameManager>
     public Cinemachine.CinemachineVirtualCamera tutorialVCam;
 
     public Texture2D penTex;
+    public CursorMode cursorMode;
 
     public override void Awake()
     {
@@ -37,6 +38,12 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         gameState = GameState.MainMenu;
+
+#if UNITY_WEBGL
+        cursorMode = CursorMode.ForceSoftware;
+#else
+        cursorMode = CursorMode.Auto;
+#endif
     }
 
     private void Update()
