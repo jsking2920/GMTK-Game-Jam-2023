@@ -55,8 +55,7 @@ public class Sentence : MonoBehaviour
 
         string result = censorableText.GetCurrentString();
         Response response = GameManager.Instance.sentenceDict.GetResponse(id, result);
-        
-        GameManager.Instance.SetGameState(GameState.BetweenSentences);
+  
         sentenceCam.enabled = false;
         imageCam.enabled = true;
         censorableText.editable = false;
@@ -64,6 +63,8 @@ public class Sentence : MonoBehaviour
         barsRemainingUI.gameObject.SetActive(false);
 
         submitButton.gameObject.SetActive(false);
+
+        GameManager.Instance.SentenceSubmitted();
     }
 
     private void OnStartNextSentence(int nextId)
@@ -84,7 +85,7 @@ public class Sentence : MonoBehaviour
 
     private IEnumerator DelayActivateButton()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2.0f);
 
         submitButton.gameObject.SetActive(true);
     }
